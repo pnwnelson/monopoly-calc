@@ -1,0 +1,180 @@
+{
+   "properties": [
+  {
+   "id": 1,
+   "className": "brown",
+   "name": "Mediterranean Avenue",
+   "owned": 60,
+   "mortgaged": 30,
+   "houseCost": 50
+ },
+ {
+   "id": 2,
+   "className": "brown",
+   "name": "Baltic Avenue",
+   "owned": 60,
+   "mortgaged": 30,
+   "houseCost": 50
+ },
+ {
+   "id": 3,
+   "className": "light-blue",
+   "name": "Oriental Avenue",
+   "owned": 100,
+   "mortgaged": 50,
+   "houseCost": 50
+ },
+ {
+   "id": 4,
+   "className": "light-blue",
+   "name": "Vermont Avenue",
+   "owned": 100,
+   "mortgaged": 50,
+   "houseCost": 50
+ },
+ {
+   "id": 5,
+   "className": "light-blue",
+   "name": "Conneticut Avenue",
+   "owned": 120,
+   "mortgaged": 60,
+   "houseCost": 50
+ },
+ {
+   "id": 6,
+   "className": "purple",
+   "name": "St. Charles Place",
+   "owned": 140,
+   "mortgaged": 70,
+   "houseCost": 100
+ },
+ {
+   "id": 7,
+   "className": "purple",
+   "name": "States Avenue",
+   "owned": 140,
+   "mortgaged": 70,
+   "houseCost": 100
+ },
+ {
+   "id": 8,
+   "className": "purple",
+   "name": "Virginia Avenue",
+   "owned": 160,
+   "mortgaged": 80,
+   "houseCost": 100
+ },
+ {
+   "id": 9,
+   "className": "orange",
+   "name": "St. James Place",
+   "owned": 180,
+   "mortgaged": 90,
+   "houseCost": 100
+ },
+ {
+   "id": 10,
+   "className": "orange",
+   "name": "Tennessee Avenue",
+   "owned": 180,
+   "mortgaged": 90,
+   "houseCost": 100
+ },
+ {
+   "id": 11,
+   "className": "orange",
+   "name": "New York Avenue",
+   "owned": 200,
+   "mortgaged": 100,
+   "houseCost": 100
+ },
+ {
+   "id": 12,
+   "className": "red",
+   "name": "Kentucky Avenue",
+   "owned": 220,
+   "mortgaged": 110,
+   "houseCost": 150
+ },
+ {
+   "id": 13,
+   "className": "red",
+   "name": "Indiana Avenue",
+   "owned": 220,
+   "mortgaged": 110,
+   "houseCost": 150
+ },
+ {
+   "id": 14,
+   "className": "red",
+   "name": "Illinois Avenue",
+   "owned": 240,
+   "mortgaged": 120,
+   "houseCost": 150
+ },
+ {
+   "id": 15,
+   "className": "yellow",
+   "name": "Atlantic Avenue",
+   "owned": 260,
+   "mortgaged": 130,
+   "houseCost": 150
+ },
+ {
+   "id": 16,
+   "className": "yellow",
+   "name": "Ventor Avenue",
+   "owned": 260,
+   "mortgaged": 130,
+   "houseCost": 150
+ },
+ {
+   "id": 17,
+   "className": "yellow",
+   "name": "Marvin Gardens",
+   "owned": 280,
+   "mortgaged": 140,
+   "houseCost": 150
+ },
+ {
+   "id": 18,
+   "className": "green",
+   "name": "Pacific Avenue",
+   "owned": 300,
+   "mortgaged": 150,
+   "houseCost": 200
+ },
+ {
+   "id": 19,
+   "className": "green",
+   "name": "North Carolina Avenue",
+   "owned": 300,
+   "mortgaged": 150,
+   "houseCost": 200
+ },
+ {
+   "id": 20,
+   "className": "green",
+   "name": "Pennsylvania Avenue",
+   "owned": 320,
+   "mortgaged": 160,
+   "houseCost": 200
+ },
+ {
+   "id": 21,
+   "className": "blue",
+   "name": "Park Place",
+   "owned": 350,
+   "mortgaged": 175,
+   "houseCost": 200
+ },
+ {
+   "id": 22,
+   "className": "blue",
+   "name": "Boardwalk",
+   "owned": 400,
+   "mortgaged": 200,
+   "houseCost": 200
+ }
+]
+}
