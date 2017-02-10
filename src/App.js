@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import data from './data.json'; // Bring in data from json file
+//import data from './data.json'; // Bring in data from json file - CURRENTLY DISABLED; USING JS OBJECT
 import { Navbar, DropdownButton, MenuItem, Form, Grid } from 'react-bootstrap';
 
+// Showing components starting with the bottom in the hierarchy.
 
 class PropertyName extends React.Component { 
   // Child to Property.
-  // This should show the Property Names and include the colors via JSON className property.
+  // This should show the names of each monopoly Property and include their colors via JSON className property.
   render() {
 
     const name = this.props.propertyNode.name.slice(0,3) // Showing just the first three letters of Property name.
@@ -22,7 +23,7 @@ class PropertyName extends React.Component {
 
 class PropertyValues extends React.Component { 
   // Child to Property.
-  // This component should show a drop down menu to select the state of the Property at the end of the game
+  // This component should show a drop down menu to select the state (mortgaged, houses, etc) of the Property at the end of the game
   render() {
 
     const { owned } = this.props.propertyNode;
@@ -51,17 +52,18 @@ class PropertyValuesTotal extends React.Component {
   render() {
 
     return 
-        // need code to add up selection from <PropertyValues />
+        // need code to add up selection from <PropertyValues /> and display in a div
   }
 }
 
 class Property extends React.Component {
   // This should be the parent/container for <PropertyName />, <PropertyValues /> and <PropertyValuesTotal />.
-  // This should be the child to <App />
+  // This should be a child to <App />
   render() {
 
     const propertyNode = properties.map(function(property) {
-      // trying to bring in data about each property from either JS Object or JSON file
+      // Trying to bring in data about each property from either JS Object or JSON file.
+      // Not sure where this should get put or the exact code that brings in the data.
       return (
         <li key={property}>{property}</li>
       );
@@ -99,7 +101,7 @@ class App extends React.Component {
 }
 
 var properties = [
-// Temporary use of JS Object instead of JSON data file for troubleshooting.
+// This is a temporary use of JS Object instead of JSON data file for troubleshooting.
   {
     id: 1,
     className: 'brown',
