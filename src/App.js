@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-//import data from './data.json'; // Bring in data from json file - CURRENTLY DISABLED; USING JS OBJECT
+import data from './data.json'; // Bring in data from json file
 import { Navbar, DropdownButton, MenuItem, Form, Grid } from 'react-bootstrap';
 
 // Showing components starting with the bottom in the hierarchy.
@@ -16,10 +16,13 @@ class PropertyName extends React.Component {
     return 
       
       <div className={this.props.propertyNode.className}>
-        <div className="prop-title-container">{name}</div>
+        <div className="prop-title-container">
+          {name}
+        </div>
       </div>  
   }
 }
+
 
 class PropertyValues extends React.Component { 
   // Child to Property.
@@ -61,20 +64,12 @@ class Property extends React.Component {
   // This should be a child to <App />
   render() {
 
-    const propertyNode = properties.map(function(property) {
-      // Trying to bring in data about each property from either JS Object or JSON file.
-      // Not sure where this should get put or the exact code that brings in the data.
-      return (
-        <li key={property}>{property}</li>
-      );
-    });
-
     return (
       
       <div className="container">
         <div className="row">
-          <PropertyName name={this.props.propertyNode} key={this.props.propertyNode}/>
-          <PropertyValues />
+          <PropertyName key={this.props.propertyNode.name}/>
+          <PropertyValues key={this.props.propertyNode.houseCost}/>
           <PropertyValuesTotal />
         </div>
       </div> 
@@ -84,7 +79,16 @@ class Property extends React.Component {
 
 class App extends React.Component {
   // This is the main container component
+
   render() {
+
+    const propertyNode = data.properties.map(function(property) {
+      // Trying to bring in data about each property from JSON file.
+      // Not sure where this should get put or the exact code that brings in the data.
+      return (
+        <Property key={property.id} children={property} />
+      );
+    });
 
     return (
       <div className="container">
@@ -92,7 +96,7 @@ class App extends React.Component {
           <h3>Monopoly Calculator</h3>
           <h6><i>Figure out the net worth of the game winner</i></h6>
           <ul className="list-unstyled properties-item">
-            <Property />
+            {propertyNode}
           </ul>
         </div>
       </div>
@@ -100,32 +104,87 @@ class App extends React.Component {
   }
 }
 
-var properties = [
 // This is a temporary use of JS Object instead of JSON data file for troubleshooting.
-  {
-    id: 1,
-    className: 'brown',
-    name: 'Baltic Avenue',
-    owned: 60,
-    mortgaged: 30,
-    houseCost: 50
-  },
-  {
-    id: 2,
-    className: 'light-blue',
-    name: 'Oriental Avenue',
-    owned: 100,
-    mortgaged: 50,
-    houseCost: 50
-  },
-  {
-    id: 3,
-    className: 'purple',
-    name: 'St. Charles Place',
-    owned: 140,
-    mortgaged: 70,
-    houseCost: 100
-  }
-];
+// var properties = [
+//   {
+//     id: 1,
+//     className: 'brown',
+//     name: 'Baltic Avenue',
+//     owned: 60,
+//     mortgaged: 30,
+//     houseCost: 50
+//   },
+//   {
+//     id: 2,
+//     className: 'light-blue',
+//     name: 'Oriental Avenue',
+//     owned: 100,
+//     mortgaged: 50,
+//     houseCost: 50
+//   },
+//   {
+//     id: 3,
+//     className: 'purple',
+//     name: 'St. Charles Place',
+//     owned: 140,
+//     mortgaged: 70,
+//     houseCost: 100
+//   }
+// ];
+
+
 
 export default App;
+
+// The following is a different approach I tried
+
+// class App extends React.Component {
+//   // This is the main container component
+// constructor() {
+//   super();
+
+//   this.state = {
+//     properties:
+//     [{
+//       id: 1,
+//       className: 'brown',
+//       name: 'Baltic Avenue',
+//       owned: 60,
+//       mortgaged: 30,
+//       houseCost: 50
+//     },
+//     {
+//       id: 2,
+//       className: 'light-blue',
+//       name: 'Oriental Avenue',
+//       owned: 100,
+//       mortgaged: 50,
+//       houseCost: 50
+//     },
+//     {
+//       id: 3,
+//       className: 'purple',
+//       name: 'St. Charles Place',
+//       owned: 140,
+//       mortgaged: 70,
+//       houseCost: 100
+//     }]
+//   }
+// }
+
+//   render() {
+
+//     return (
+//       <div className="container">
+//         <div className="row">
+//           <h3>Monopoly Calculator</h3>
+//           <h6><i>Figure out the net worth of the game winner</i></h6>
+//           <ul className="list-unstyled properties-item">
+//             {this.state.properties.map((property, i) =>
+//               <Property key={i} propertyNode={property} />)}
+//           </ul>
+//         </div>
+//       </div>
+//     );
+//   }
+// }
