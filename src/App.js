@@ -15,7 +15,7 @@ class PropertyName extends React.Component {
 
     return (
       
-      <div className="property-title-container pull-left">
+      <div className="property-title-container">
         <div className={this.props.property.className}>
           <p>{name}</p>
         </div>
@@ -56,7 +56,7 @@ class PropertyValuesTotal extends React.Component {
   render() {
 
     return (
-        <div></div>
+        <div className="property-value-total-box"></div>
       )
         // need code to add up selection from <PropertyValues /> and display in a div
   }
@@ -98,11 +98,13 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="row">
-          <h3>Monopoly Calculator</h3>
+        <div className="col-xs-12">
+          <h3>MONOPOLY CALCULATOR</h3>
           <h6><i>Figure out the net worth of the game winner</i></h6>
           <ul className="list-unstyled properties-item">
             {propertyNode}
           </ul>
+        </div>
         </div>
       </div>
     );

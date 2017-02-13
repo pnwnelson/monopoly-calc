@@ -49,10 +49,21 @@
   width: 40px;
   height: 40px;
   margin: 5px;
+  float: left;
 }
 
 .property-values-container {
   margin: 5px;
+  float: left;
+}
+
+.property-value-total-box {
+  width: 60px;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin: 5px;
+  float: left;
 }
 
 .properties-item {
@@ -77,10 +88,13 @@
 
 .dropdown-menu[aria-labelledby = ddown] {
   min-width: 40px;
+  padding: 0px;
+  box-shadow: 0 20px 40px rgba(0,0,0, 0.75);
 }
 
 .dropdown-menu[aria-labelledby = ddown] > li > a {
   padding: 9px 16px;
+  text-align: left;
 }
 
 
