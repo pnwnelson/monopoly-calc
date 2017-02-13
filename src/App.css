@@ -34,22 +34,37 @@
 }
 
 .property-title {
-  padding-bottom: 10px;
-}
-
-.prop-title-container {
   width: 40px;
   height: 40px;
-  border: 1px solid blue;
+  border-radius: 4px;
+  color: white;
+  text-align: center;
+}
+
+.property-title > p {
+  padding: 6px;
+}
+
+.property-title-container {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+}
+
+.property-values-container {
+  margin: 5px;
 }
 
 .properties-item {
-  padding-bottom: 20px;
+  padding-bottom: 0px;
 }
 
-.baltic {
-  background-color: purple; 
-  color: white;
+.owned-box {
+  border: 2px solid green;
+}
+
+.mortgaged-box {
+  border: 2px solid red;
 }
 
 .houses {
@@ -60,11 +75,28 @@
   color: red;
 }
 
+.dropdown-menu[aria-labelledby = ddown] {
+  min-width: 40px;
+}
+
+.dropdown-menu[aria-labelledby = ddown] > li > a {
+  padding: 9px 16px;
+}
+
+
 .btn-selections {
   width: 40px;
   height: 40px;
   margin: 1px;
+  border-radius: 0px;
 }
+
+.ddown {
+  width: 40px;
+  height: 40px;
+  border-radius: 0px;
+}
+
 
 /* --- Property Colors --- */
 

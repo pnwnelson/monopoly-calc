@@ -2,7 +2,7 @@
    "properties": [
   {
    "id": 1,
-   "className": "brown",
+   "className": "brown property-title",
    "name": "Mediterranean Avenue",
    "owned": 60,
    "mortgaged": 30,
@@ -10,7 +10,7 @@
  },
  {
    "id": 2,
-   "className": "brown",
+   "className": "brown property-title",
    "name": "Baltic Avenue",
    "owned": 60,
    "mortgaged": 30,
@@ -18,7 +18,7 @@
  },
  {
    "id": 3,
-   "className": "light-blue",
+   "className": "light-blue property-title",
    "name": "Oriental Avenue",
    "owned": 100,
    "mortgaged": 50,
@@ -26,7 +26,7 @@
  },
  {
    "id": 4,
-   "className": "light-blue",
+   "className": "light-blue property-title",
    "name": "Vermont Avenue",
    "owned": 100,
    "mortgaged": 50,
@@ -34,15 +34,15 @@
  },
  {
    "id": 5,
-   "className": "light-blue",
+   "className": "light-blue property-title",
    "name": "Conneticut Avenue",
    "owned": 120,
    "mortgaged": 60,
    "houseCost": 50
  },
  {
-   "id": 6,
-   "className": "purple",
+   "id": 6, 
+   "className": "purple property-title",
    "name": "St. Charles Place",
    "owned": 140,
    "mortgaged": 70,
@@ -50,7 +50,7 @@
  },
  {
    "id": 7,
-   "className": "purple",
+   "className": "purple property-title",
    "name": "States Avenue",
    "owned": 140,
    "mortgaged": 70,
@@ -58,7 +58,7 @@
  },
  {
    "id": 8,
-   "className": "purple",
+   "className": "purple property-title",
    "name": "Virginia Avenue",
    "owned": 160,
    "mortgaged": 80,
@@ -66,7 +66,7 @@
  },
  {
    "id": 9,
-   "className": "orange",
+   "className": "orange property-title",
    "name": "St. James Place",
    "owned": 180,
    "mortgaged": 90,
@@ -74,7 +74,7 @@
  },
  {
    "id": 10,
-   "className": "orange",
+   "className": "orange property-title",
    "name": "Tennessee Avenue",
    "owned": 180,
    "mortgaged": 90,
@@ -82,7 +82,7 @@
  },
  {
    "id": 11,
-   "className": "orange",
+   "className": "orange property-title",
    "name": "New York Avenue",
    "owned": 200,
    "mortgaged": 100,
@@ -90,7 +90,7 @@
  },
  {
    "id": 12,
-   "className": "red",
+   "className": "red property-title",
    "name": "Kentucky Avenue",
    "owned": 220,
    "mortgaged": 110,
@@ -98,7 +98,7 @@
  },
  {
    "id": 13,
-   "className": "red",
+   "className": "red property-title",
    "name": "Indiana Avenue",
    "owned": 220,
    "mortgaged": 110,
@@ -106,7 +106,7 @@
  },
  {
    "id": 14,
-   "className": "red",
+   "className": "red property-title",
    "name": "Illinois Avenue",
    "owned": 240,
    "mortgaged": 120,
@@ -114,7 +114,7 @@
  },
  {
    "id": 15,
-   "className": "yellow",
+   "className": "yellow property-title",
    "name": "Atlantic Avenue",
    "owned": 260,
    "mortgaged": 130,
@@ -122,7 +122,7 @@
  },
  {
    "id": 16,
-   "className": "yellow",
+   "className": "yellow property-title",
    "name": "Ventor Avenue",
    "owned": 260,
    "mortgaged": 130,
@@ -130,7 +130,7 @@
  },
  {
    "id": 17,
-   "className": "yellow",
+   "className": "yellow property-title",
    "name": "Marvin Gardens",
    "owned": 280,
    "mortgaged": 140,
@@ -138,7 +138,7 @@
  },
  {
    "id": 18,
-   "className": "green",
+   "className": "green property-title",
    "name": "Pacific Avenue",
    "owned": 300,
    "mortgaged": 150,
@@ -146,7 +146,7 @@
  },
  {
    "id": 19,
-   "className": "green",
+   "className": "green property-title",
    "name": "North Carolina Avenue",
    "owned": 300,
    "mortgaged": 150,
@@ -154,7 +154,7 @@
  },
  {
    "id": 20,
-   "className": "green",
+   "className": "green property-title",
    "name": "Pennsylvania Avenue",
    "owned": 320,
    "mortgaged": 160,
@@ -162,7 +162,7 @@
  },
  {
    "id": 21,
-   "className": "blue",
+   "className": "blue property-title",
    "name": "Park Place",
    "owned": 350,
    "mortgaged": 175,
@@ -170,7 +170,7 @@
  },
  {
    "id": 22,
-   "className": "blue",
+   "className": "blue property-title",
    "name": "Boardwalk",
    "owned": 400,
    "mortgaged": 200,
