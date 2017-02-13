@@ -16,6 +16,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "surge -p build -d monopoly-calc.surge.sh"
+    "deploy": "surge -p build -d monopoly-calc.surge.sh",
+    "yolo": "npm run build && npm run deploy"
   }
 }

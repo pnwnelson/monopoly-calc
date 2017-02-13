@@ -1,10 +1,5 @@
-.App {
+/*.App {
   text-align: center;
-}
-
-/*.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
 }
 
 .App-header {
@@ -18,9 +13,14 @@
   font-size: large;
 }*/
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@import 'kabelfont.css';
+
+html {
+  font-family: Kabel;
+}
+
+.kabel-font {
+  font-family: Kabel;
 }
 
 .selectedStyle {
@@ -31,6 +31,38 @@
 
 .unSelectedStyle {
   cursor: pointer;
+}
+
+.networth-total-box {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 95px;
+  width: 170px;
+  background-color: blue;
+  border-bottom-left-radius: 20px;
+}
+
+.tv {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  margin: 20px 0;
+  background: red;
+  border-radius: 50% / 10%;
+  color: white;
+  text-align: center;
+  text-indent: .1em;
+}
+.tv:before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  right: -5%;
+  left: -5%;
+  background: inherit;
+  border-radius: 5% / 50%;
 }
 
 .property-title {
