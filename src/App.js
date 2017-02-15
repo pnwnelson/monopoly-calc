@@ -21,7 +21,7 @@ class Property extends React.Component {
         <div className="row properties-item">
           <div className="col-xs-12">
             <PropertyName property={property}/>
-            <PropertyValues property={property}/>
+            <PropertyValues property={property} />
             <PropertyValuesTotal />
           </div>
         </div>

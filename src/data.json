@@ -4,6 +4,7 @@
    "id": 1,
    "className": "brown property-title",
    "name": "Mediterranean Avenue",
+   "unowned": 0,
    "owned": 60,
    "mortgaged": 30,
    "houseCost": 50
@@ -12,6 +13,7 @@
    "id": 2,
    "className": "brown property-title",
    "name": "Baltic Avenue",
+   "unowned": 0,
    "owned": 60,
    "mortgaged": 30,
    "houseCost": 50
@@ -20,6 +22,7 @@
    "id": 3,
    "className": "light-blue property-title",
    "name": "Oriental Avenue",
+   "unowned": 0,
    "owned": 100,
    "mortgaged": 50,
    "houseCost": 50
@@ -28,6 +31,7 @@
    "id": 4,
    "className": "light-blue property-title",
    "name": "Vermont Avenue",
+   "unowned": 0,
    "owned": 100,
    "mortgaged": 50,
    "houseCost": 50
@@ -36,6 +40,7 @@
    "id": 5,
    "className": "light-blue property-title",
    "name": "Conneticut Avenue",
+   "unowned": 0,
    "owned": 120,
    "mortgaged": 60,
    "houseCost": 50
@@ -44,6 +49,7 @@
    "id": 6, 
    "className": "purple property-title",
    "name": "St. Charles Place",
+   "unowned": 0,
    "owned": 140,
    "mortgaged": 70,
    "houseCost": 100
@@ -52,6 +58,7 @@
    "id": 7,
    "className": "purple property-title",
    "name": "States Avenue",
+   "unowned": 0,
    "owned": 140,
    "mortgaged": 70,
    "houseCost": 100
@@ -60,6 +67,7 @@
    "id": 8,
    "className": "purple property-title",
    "name": "Virginia Avenue",
+   "unowned": 0,
    "owned": 160,
    "mortgaged": 80,
    "houseCost": 100
@@ -68,6 +76,7 @@
    "id": 9,
    "className": "orange property-title",
    "name": "St. James Place",
+   "unowned": 0,
    "owned": 180,
    "mortgaged": 90,
    "houseCost": 100
@@ -76,6 +85,7 @@
    "id": 10,
    "className": "orange property-title",
    "name": "Tennessee Avenue",
+   "unowned": 0,
    "owned": 180,
    "mortgaged": 90,
    "houseCost": 100
@@ -84,6 +94,7 @@
    "id": 11,
    "className": "orange property-title",
    "name": "New York Avenue",
+   "unowned": 0,
    "owned": 200,
    "mortgaged": 100,
    "houseCost": 100
@@ -92,6 +103,7 @@
    "id": 12,
    "className": "red property-title",
    "name": "Kentucky Avenue",
+   "unowned": 0,
    "owned": 220,
    "mortgaged": 110,
    "houseCost": 150
@@ -100,6 +112,7 @@
    "id": 13,
    "className": "red property-title",
    "name": "Indiana Avenue",
+   "unowned": 0,
    "owned": 220,
    "mortgaged": 110,
    "houseCost": 150
@@ -108,6 +121,7 @@
    "id": 14,
    "className": "red property-title",
    "name": "Illinois Avenue",
+   "unowned": 0,
    "owned": 240,
    "mortgaged": 120,
    "houseCost": 150
@@ -116,6 +130,7 @@
    "id": 15,
    "className": "yellow property-title",
    "name": "Atlantic Avenue",
+   "unowned": 0,
    "owned": 260,
    "mortgaged": 130,
    "houseCost": 150
@@ -124,6 +139,7 @@
    "id": 16,
    "className": "yellow property-title",
    "name": "Ventor Avenue",
+   "unowned": 0,
    "owned": 260,
    "mortgaged": 130,
    "houseCost": 150
@@ -132,6 +148,7 @@
    "id": 17,
    "className": "yellow property-title",
    "name": "Marvin Gardens",
+   "unowned": 0,
    "owned": 280,
    "mortgaged": 140,
    "houseCost": 150
@@ -140,6 +157,7 @@
    "id": 18,
    "className": "green property-title",
    "name": "Pacific Avenue",
+   "unowned": 0,
    "owned": 300,
    "mortgaged": 150,
    "houseCost": 200
@@ -148,6 +166,7 @@
    "id": 19,
    "className": "green property-title",
    "name": "North Carolina Avenue",
+   "unowned": 0,
    "owned": 300,
    "mortgaged": 150,
    "houseCost": 200
@@ -156,6 +175,7 @@
    "id": 20,
    "className": "green property-title",
    "name": "Pennsylvania Avenue",
+   "unowned": 0,
    "owned": 320,
    "mortgaged": 160,
    "houseCost": 200
@@ -164,6 +184,7 @@
    "id": 21,
    "className": "blue property-title",
    "name": "Park Place",
+   "unowned": 0,
    "owned": 350,
    "mortgaged": 175,
    "houseCost": 200
@@ -172,6 +193,7 @@
    "id": 22,
    "className": "blue property-title",
    "name": "Boardwalk",
+   "unowned": 0,
    "owned": 400,
    "mortgaged": 200,
    "houseCost": 200
