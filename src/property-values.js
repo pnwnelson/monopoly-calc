@@ -24,7 +24,12 @@ export default React.createClass({
 		console.log(event)
 		const eventKey = event
 
-		if (eventKey == 'O') {
+		if (eventKey == 0) {
+			this.setState({
+				btnTitle: eventKey,
+				style: {backgroundColor: 'white', color: 'black'}
+			});
+		} else if (eventKey == 'O') {
 			this.setState({
 				btnTitle: eventKey,
 				style: {color: 'rgb(31, 178, 90)'}
