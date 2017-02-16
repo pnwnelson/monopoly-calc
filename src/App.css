@@ -145,19 +145,20 @@ html {
 }
 
 
-.btn-selections {
+.btn-selections { /* These are the buttons inside the button list */
   width: 40px;
   height: 40px;
   margin: 1px;
-  border-radius: 0px;
+  border-radius: 4px;
+  color: white;
 }
 
 .ddown {
   width: 40px;
   height: 40px;
   border-radius: 0px;
+  background-color: blue;
 }
-
 
 /* --- Property Colors --- */
 

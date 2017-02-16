@@ -8,23 +8,84 @@ export default React.createClass({
 
 	displayName: 'PropertyValues',
 
-	propTypes: {
-		btnTitle: React.PropTypes.string
-	},
+	// propTypes: {
+	// 	btnColor: React.PropTypes.string
+	// },
+
 
 	getInitialState() {
 		return {
-			btnTitle: '$'
+			btnTitle: '$',
+			style: {backgroundColor: 'white'}
 		}
 	},
 
 	handleChange (event) {
 		console.log(event)
-		let eventKey = event
-		this.setState({
-			btnTitle: eventKey // don't know what this should be - keep getting console error of 'value' being undefined
-		});
+		const eventKey = event
+
+		if (eventKey == 'O') {
+			this.setState({
+				btnTitle: eventKey,
+				style: {color: 'rgb(31, 178, 90)'}
+			});
+		} else if (eventKey == 'M') {
+			this.setState({
+				btnTitle: eventKey,
+				style: {color: 'rgb(237, 27, 36)'}
+			});
+		} else if (eventKey == 1) {
+			this.setState({
+				btnTitle: eventKey,
+				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
+			});
+		} else if (eventKey == 2) {
+			this.setState({
+				btnTitle: eventKey,
+				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
+			});
+		} else if (eventKey == 3) {
+			this.setState({
+				btnTitle: eventKey,
+				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
+			});
+		} else if (eventKey == 4) {
+			this.setState({
+				btnTitle: eventKey,
+				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
+			});
+		} else if (eventKey == 'H') {
+			this.setState({
+				btnTitle: eventKey,
+				style: {backgroundColor: 'rgb(237, 27, 36)', color: 'white'}
+			})
+		} else {
+			this.setState({
+				btnTitle: eventKey
+			})
+		}
+
+		// this.setState({
+		// 	btnTitle: eventKey,
+		// 	style: {buttonColor}
+		// 	// Can I build a function to change className of dropdown conditional on eventKey?
+		// });
 	},
+
+	// getBgColor () {
+	// 	let red = { bgColor: 'red'}
+	// 	let green = { bgColor: 'green'}
+	// 	if (this.state.btnTitle == 1) {
+	// 		console.log("The color should change to green")
+	// 		return green
+	// 	} else if (this.state.btnTitle == "H") {
+	// 		console.log("The color should change to red")
+	// 		return red
+	// 	} else {
+	// 		console.log("The color shouldn't change at all")
+	// 		return null
+	// 	}
+	// },
 
   render() {
 
@@ -32,11 +93,10 @@ export default React.createClass({
     const { owned } = this.props.property;
     const { mortgaged } = this.props.property;
     const { houseCost } = this.props.property;
-    //const { oneHouse } = function() {owned + (houseCost * 1)};
 
     return (
       <div className="property-values-container">
-        <DropdownButton className="ddown" id="ddown" title={this.state.btnTitle} value="$" onSelect={this.handleChange}>
+        <DropdownButton className="ddown" id="ddown" title={this.state.btnTitle} value="$" onSelect={this.handleChange} style={this.state.style}>
           <MenuItem className="unowned-box btn-selections" eventKey="0" value={unowned}>0</MenuItem>
           <MenuItem className="owned-box btn-selections" eventKey="O" value={owned}>O</MenuItem>
           <MenuItem className="mortgaged-box btn-selections" eventKey="M" value={mortgaged}>M</MenuItem>
@@ -48,9 +108,12 @@ export default React.createClass({
         </DropdownButton>
       </div>
     )
+
     //console.log(oneHouse);
   }
 })
+
+const style = {backgroundColor: 'white'}
 
 
 
