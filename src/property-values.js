@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropdownButton, MenuItem, Form, Grid } from 'react-bootstrap';
+import { DropdownButton, MenuItem, Input, Form, Grid } from 'react-bootstrap';
 
 export default React.createClass({
 	
@@ -8,11 +8,6 @@ export default React.createClass({
 
 	displayName: 'PropertyValues',
 
-	// propTypes: {
-	// 	btnColor: React.PropTypes.string
-	// },
-
-
 	getInitialState() {
 		return {
 			btnTitle: '$',
@@ -20,77 +15,68 @@ export default React.createClass({
 		}
 	},
 
+	// This handler is to style the menu options
 	handleChange (event) {
-		console.log(event)
-		const eventKey = event
 
-		if (eventKey == 0) {
+		console.log("The event is " + event)
+
+		if (event == 0) {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {backgroundColor: 'white', color: 'black'}
 			});
-		} else if (eventKey == 'O') {
+		} else if (event == 'O') {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {color: 'rgb(31, 178, 90)'}
 			});
-		} else if (eventKey == 'M') {
+		} else if (event == 'M') {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {color: 'rgb(237, 27, 36)'}
 			});
-		} else if (eventKey == 1) {
+		} else if (event == 1) {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
 			});
-		} else if (eventKey == 2) {
+		} else if (event == 2) {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
 			});
-		} else if (eventKey == 3) {
+		} else if (event == 3) {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
 			});
-		} else if (eventKey == 4) {
+		} else if (event == 4) {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {backgroundColor: 'rgb(31, 178, 90)', color: 'white'}
 			});
-		} else if (eventKey == 'H') {
+		} else if (event == 'H') {
 			this.setState({
-				btnTitle: eventKey,
+				btnTitle: event,
 				style: {backgroundColor: 'rgb(237, 27, 36)', color: 'white'}
 			})
 		} else {
 			this.setState({
-				btnTitle: eventKey
+				btnTitle: event
 			})
 		}
-
-		// this.setState({
-		// 	btnTitle: eventKey,
-		// 	style: {buttonColor}
-		// 	// Can I build a function to change className of dropdown conditional on eventKey?
-		// });
 	},
 
-	// getBgColor () {
-	// 	let red = { bgColor: 'red'}
-	// 	let green = { bgColor: 'green'}
-	// 	if (this.state.btnTitle == 1) {
-	// 		console.log("The color should change to green")
-	// 		return green
-	// 	} else if (this.state.btnTitle == "H") {
-	// 		console.log("The color should change to red")
-	// 		return red
-	// 	} else {
-	// 		console.log("The color shouldn't change at all")
-	// 		return null
-	// 	}
-	// },
+	// This handler is to pass off the selected total value of the property
+	handleValue(event) {
+		
+		//const finalTotal = [] // empty array to add all the property values to.
+		const propertyValueTotal = event.target.value;
+		this.props.onClick(propertyValueTotal);
+		console.log('This is the handleValue: ' + event)
+		//finalTotal.push(propertyValueTotal) // hopefully add each property value selected to end of array
+		//console.log(finalTotal)
+	},
 
   render() {
 
@@ -99,26 +85,57 @@ export default React.createClass({
     const { mortgaged } = this.props.property;
     const { houseCost } = this.props.property;
 
+    // This menthod will let me use the value= attribute and populates the total box, but won't let me style it.
     return (
-      <div className="property-values-container">
-        <DropdownButton className="ddown" id="ddown" title={this.state.btnTitle} value="$" onSelect={this.handleChange} style={this.state.style}>
-          <MenuItem className="unowned-box btn-selections" eventKey="0" value={unowned}>0</MenuItem>
-          <MenuItem className="owned-box btn-selections" eventKey="O" value={owned}>O</MenuItem>
-          <MenuItem className="mortgaged-box btn-selections" eventKey="M" value={mortgaged}>M</MenuItem>
-          <MenuItem className="green btn-selections" eventKey="1" value={owned + (houseCost * 1)}>1</MenuItem>
-          <MenuItem className="green btn-selections" eventKey="2" value={owned + (houseCost * 2)}>2</MenuItem>
-          <MenuItem className="green btn-selections" eventKey="3" value={owned + (houseCost * 3)}>3</MenuItem>
-          <MenuItem className="green btn-selections" eventKey="4" value={owned + (houseCost * 4)}>4</MenuItem>
-          <MenuItem className="red btn-selections" eventKey="H" value={owned + (houseCost * 5)}>H</MenuItem>
-        </DropdownButton>
-      </div>
+    	<div className="property-values-container">
+    		<select className="ddown" title="*" id="ddown" onSelect={this.handleChange} onChange={this.handleValue} style={this.state.style}>
+    			<option selected hidden>$</option>
+    			<option className="unowned-box btn-selections" value={unowned}>0</option>
+    			<option className="mortgaged-box btn-selections" value={"$" + mortgaged}>M</option>
+    			<option className="owned-box btn-selection" value={"$" + owned}>O</option>
+    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 1))}>1</option>
+    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 2))}>2</option>
+    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 3))}>3</option>
+    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 4))}>4</option>
+    			<option className="red btn-selections" value={"$" + (owned + (houseCost * 5))}>H</option>
+    		</select>
+    	</div>
     )
 
-    //console.log(oneHouse);
+    // This method works with styling, but it won't let me use the value= attribute to populate the total box.
+    // return (
+    //   <div className="property-values-container">
+    //     <DropdownButton className="ddown" id="ddown" title={this.state.btnTitle} value="$" onSelect={this.handleChange	} style={this.state.style}>
+    //       <MenuItem className="unowned-box btn-selections" eventKey="0" onClick={this.handleValue} value="testtest">0</MenuItem>
+    //       <MenuItem className="owned-box btn-selections" eventKey="O" onClick={this.handleValue} value={owned}>O</MenuItem>
+    //       <MenuItem className="mortgaged-box btn-selections" eventKey="M" onClick={this.handleValue} value={mortgaged}>M</MenuItem>
+    //       <MenuItem className="green btn-selections" eventKey={owned + (houseCost * 1)} onClick={this.handleValue}>1</MenuItem>
+    //       <MenuItem className="green btn-selections" eventKey="2" value={owned + (houseCost * 2)}>2</MenuItem>
+    //       <MenuItem className="green btn-selections" eventKey="3" value={owned + (houseCost * 3)}>3</MenuItem>
+    //       <MenuItem className="green btn-selections" eventKey="4" value={owned + (houseCost * 4)}>4</MenuItem>
+    //       <MenuItem className="red btn-selections" eventKey="H" value={owned + (houseCost * 5)}>H</MenuItem>
+    //     </DropdownButton>
+    //   </div>
+    // )
+
+    // return (
+    // 	<div>
+    // 		<Input type="select" ref="select" onSelect={this.handleChange} onChange={this.handleValue} style={this.state.style}>
+    // 			<option className="unowned-box btn-selections" value={unowned}>0</option>
+    // 			<option className="mortgaged-box btn-selections" value={"$" + mortgaged}>M</option>
+    // 			<option className="owned-box btn-selection" value={"$" + owned}>O</option>
+    // 			<option className="green btn-selections" value={"$" + (owned + (houseCost * 1))}>1</option>
+    // 			<option className="green btn-selections" value={"$" + (owned + (houseCost * 2))}>2</option>
+    // 			<option className="green btn-selections" value={"$" + (owned + (houseCost * 3))}>3</option>
+    // 			<option className="green btn-selections" value={"$" + (owned + (houseCost * 4))}>4</option>
+    // 			<option className="red btn-selections" value={"$" + (owned + (houseCost * 5))}>H</option>
+    // 		</Input>
+    // 	</div>
+    // )
   }
 })
 
-const style = {backgroundColor: 'white'}
+//const style = {backgroundColor: 'white'}
 
 
 

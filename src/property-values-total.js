@@ -8,10 +8,15 @@ export default React.createClass({
   displayName: 'PropertyValuesTotal',
 
   render() {
+  // need code to add up selection from <PropertyValues /> and display in a div
+  	const propertyValueTotal = this.props.propertyValueTotal
 
     return (
-        <div className="property-value-total-box"></div>
+        <div className="property-value-total-box-container">
+        	<div className="value-amount">
+        		{propertyValueTotal}
+        	</div>
+        </div>
       )
-        // need code to add up selection from <PropertyValues /> and display in a div
   }
 })

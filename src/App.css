@@ -90,13 +90,21 @@ html {
   float: left;
 }
 
-.property-value-total-box {
+.property-value-total-box-container {
   width: 60px;
   height: 40px;
   border: 1px solid lightgray;
   border-radius: 4px;
   margin: 5px;
   float: left;
+}
+
+.value-amount {
+  font-size: 14px;
+  text-align: center;
+  margin: 8px;
+  color: gray;
+  font-weight: 300;
 }
 
 .properties-item {
@@ -156,8 +164,9 @@ html {
 .ddown {
   width: 40px;
   height: 40px;
-  border-radius: 0px;
+  border-radius: 4px;
   background-color: blue;
+  text-align: center;
 }
 
 /* --- Property Colors --- */
