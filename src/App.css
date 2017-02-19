@@ -57,7 +57,7 @@ html {
 .total-header {
   text-align: center;
   margin: 2px;
-  color: white;
+  color: gray;
   font-weight: lighter;
 }
 
@@ -74,11 +74,31 @@ html {
   text-align: center;
 }
 
+.subproperty-title {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  color: gray;
+  text-align: center;
+  border: 1px solid lightgray;
+}
+
+.subproperty-title > p {
+  padding: 8px;
+}
+
 .property-title > p {
-  padding: 6px;
+  padding: 8px;
 }
 
 .property-title-container {
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  float: left;
+}
+
+.subproperty-title-container {
   width: 40px;
   height: 40px;
   margin: 5px;
@@ -113,6 +133,10 @@ html {
 
 .property-item-list-container {
   margin-top: 110px;
+}
+
+.subproperty-item-list-container {
+  margin-top: 10px;
 }
 
 .app-header {
@@ -162,7 +186,7 @@ html {
 }
 
 .ddown {
-  width: 40px;
+  width: 95px;
   height: 40px;
   border-radius: 4px;
   background-color: blue;

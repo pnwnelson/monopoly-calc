@@ -2,8 +2,12 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import data from './data.json'; // Bring in data from json file
+import subproperties from './subproperties.json';
 import Property from './property';
+import SubProperty from './subproperty';
 import { PageHeader, Navbar, DropdownButton, MenuItem, Form, Grid } from 'react-bootstrap';
+
+
 
 class NetWorthTotal extends React.Component {
 
@@ -22,9 +26,14 @@ class App extends React.Component {
   // This is the main container component
 
   render() {
+    const subPropertyNode = subproperties.subproperties.map(function(subproperty) {
+      return (
+        <SubProperty key={subproperty.id} subproperty={subproperty} />
+      );
+    });
 
     const propertyNode = data.properties.map(function(property) {
-      return (
+      return (  
         <Property key={property.id} property={property} />
 
       );
@@ -41,6 +50,11 @@ class App extends React.Component {
           <div className="row property-item-list-container">
             <ul className="list-unstyled properties-item">
               {propertyNode}
+            </ul>
+          </div>
+          <div className="row subproperty-item-list-container">
+            <ul className="list-unstyled properties-item">
+              {subPropertyNode}
             </ul>
           </div>
         </div>
