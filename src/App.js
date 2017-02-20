@@ -5,7 +5,7 @@ import data from './data.json'; // Bring in data from json file
 import subproperties from './subproperties.json';
 import Property from './property';
 import SubProperty from './subproperty';
-import { PageHeader, Navbar, DropdownButton, MenuItem, Form, Grid, Tab, Tabs } from 'react-bootstrap';
+import { PageHeader, Navbar, DropdownButton, MenuItem, Form, Grid, Nav, Tab, Tabs } from 'react-bootstrap';
 
 
 
