@@ -36,8 +36,23 @@ html {
   cursor: pointer;
 }
 
+.nav-tabs > li {
+  font-family: Kabel;
+  font-size: 12px;
+}
+
 .unSelectedStyle {
   cursor: pointer;
+}
+
+.app-header {
+  position: fixed;
+  margin-top: 0px;
+  padding-left: 10px;
+  width: 100%;
+  z-index: 1000;
+  background-color: white;
+
 }
 
 .networth-total-box {
@@ -54,6 +69,11 @@ html {
   border-top: 1px solid gray;*/
 }
 
+.content-wrapper {
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .total-header {
   text-align: center;
   margin: 2px;
@@ -67,7 +87,7 @@ html {
 }
 
 .property-title {
-  width: 40px;
+  width: 60px;
   height: 40px;
   border-radius: 4px;
   color: white;
@@ -75,7 +95,7 @@ html {
 }
 
 .subproperty-title {
-  width: 40px;
+  width: 60px;
   height: 40px;
   border-radius: 4px;
   color: gray;
@@ -92,10 +112,11 @@ html {
 }
 
 .property-title-container {
-  width: 40px;
+  width: 60px;
   height: 40px;
   margin: 5px;
   float: left;
+  font-family: Kabel;
 }
 
 .subproperty-title-container {
@@ -132,21 +153,12 @@ html {
 }
 
 .property-item-list-container {
-  margin-top: 110px;
+  margin-top: 5px;
+  padding-top: 50px;
 }
 
 .subproperty-item-list-container {
   margin-top: 10px;
-}
-
-.app-header {
-  position: fixed;
-  margin-top: 0px;
-  padding-left: 10px;
-  width: 100%;
-  z-index: 1000;
-  background-color: white;
-  border-bottom: 1px solid lightgray;
 }
 
 .owned-box {
@@ -191,6 +203,26 @@ html {
   border-radius: 4px;
   background-color: blue;
   text-align: center;
+}
+
+#asset-tabs {
+  margin-top: 100px;
+
+}
+
+.tab-content {
+  margin-top: 10px;
+}
+
+.nav-tabs {
+  position: fixed;
+  z-index: 1000;
+  background-color: white;
+  width: 100%
+}
+
+.nav {
+  padding-left: none;
 }
 
 /* --- Property Colors --- */

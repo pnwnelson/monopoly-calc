@@ -10,7 +10,7 @@ export default React.createClass({
 
   render() {
 
-    const name = this.props.subproperty.name.slice(0,3) // Showing just the first three letters of Property name.
+    const name = this.props.subproperty.abbrName // Showing just the first three letters of Property name.
 
     return (
       

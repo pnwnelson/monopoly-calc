@@ -5,7 +5,7 @@ import data from './data.json'; // Bring in data from json file
 import subproperties from './subproperties.json';
 import Property from './property';
 import SubProperty from './subproperty';
-import { PageHeader, Navbar, DropdownButton, MenuItem, Form, Grid } from 'react-bootstrap';
+import { PageHeader, Navbar, DropdownButton, MenuItem, Form, Grid, Tab, Tabs } from 'react-bootstrap';
 
 
 
@@ -46,22 +46,30 @@ class App extends React.Component {
           <NetWorthTotal />
           <h6 className="sub-header">Figure out the net worth of the game winner</h6>
         </div>
-        <div className="container">
-          <div className="row property-item-list-container">
-            <ul className="list-unstyled properties-item">
-              {propertyNode}
-            </ul>
-          </div>
-          <div className="row subproperty-item-list-container">
-            <ul className="list-unstyled properties-item">
-              {subPropertyNode}
-            </ul>
+        <div className="row content-wrapper">
+        <div className="col-xs-12">
+          <Tabs defaultActiveKey={1} id="asset-tabs">
+            <Tab eventKey={1} title="Property Assets">
+              <div className="row property-item-list-container">
+                <ul className="list-unstyled properties-item">
+                  {propertyNode}
+                </ul>
+              </div>
+            </Tab>
+            <Tab eventKey={2} title="Cash Assets">
+              <div className="row subproperty-item-list-container">
+                <ul className="list-unstyled properties-item">
+                  {subPropertyNode}
+                </ul>
+              </div>
+            </Tab>
+          </Tabs>
           </div>
         </div>
-      </div>
+        </div>
     );
   }
 }
-// <h6><i>Figure out the net worth of the game winner</i></h6>
+
 export default App;
 
