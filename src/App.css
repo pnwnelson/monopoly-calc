@@ -36,11 +36,6 @@ html {
   cursor: pointer;
 }
 
-.nav-tabs > li {
-  font-family: Kabel;
-  font-size: 12px;
-}
-
 .unSelectedStyle {
   cursor: pointer;
 }
@@ -198,12 +193,56 @@ html {
 }
 
 .ddown {
-  width: 95px;
+  width: 100px;
   height: 40px;
   border-radius: 4px;
-  background-color: blue;
-  text-align: center;
+  background-color: white;
+  color: gray;
+  font-weight: lighter;
+  padding-left: 15px;
+  padding-right: auto;
 }
+
+/* --- Cash Asset tab --- */
+
+.cash-asset-container {
+  padding-top: 50px;
+}
+
+.cash-row-container {
+  display: inline-block;
+}
+
+.form-control {
+  display: inline-block !important;
+  width: 45px !important;
+  height: 40px !important;
+}
+
+.cash-label {
+  width: 45px;
+  display: inline-block;
+}
+
+.cash-number {
+  width: 40px;
+  height: 40px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 10px;
+  margin: 5px;
+  display: inline-block;
+}
+
+.cash-subtotal {
+  width: 60px;
+  height: 40px;
+  border-radius: 4px;
+  padding: 10px;
+  border: 1px solid lightgray;
+}
+
+/* --- Navigation Tabs --- */
 
 #asset-tabs {
   margin-top: 100px;
@@ -224,6 +263,11 @@ html {
 
 .nav {
   padding-left: 25px !important;
+}
+
+.nav-tabs > li {
+  font-family: Kabel;
+  font-size: 12px;
 }
 
 /* --- Property Colors --- */

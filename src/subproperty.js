@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from 'react-bootstrap';
+//import { Grid } from 'react-bootstrap';
 import SubPropertyValues from './subproperty-values';
 import SubPropertyName from './subproperty-name';
 import SubPropertyValuesTotal from './subproperty-values-total';

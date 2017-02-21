@@ -5,7 +5,8 @@ import data from './data.json'; // Bring in data from json file
 import subproperties from './subproperties.json';
 import Property from './property';
 import SubProperty from './subproperty';
-import { PageHeader, Navbar, DropdownButton, MenuItem, Form, Grid, Nav, Tab, Tabs } from 'react-bootstrap';
+import CashAssets from './cash-assets'
+import { Navbar, Nav, Tab, Tabs } from 'react-bootstrap';
 
 
 
@@ -26,6 +27,7 @@ class App extends React.Component {
   // This is the main container component
 
   render() {
+
     const subPropertyNode = subproperties.subproperties.map(function(subproperty) {
       return (
         <SubProperty key={subproperty.id} subproperty={subproperty} />
@@ -55,13 +57,14 @@ class App extends React.Component {
                   {propertyNode}
                 </ul>
               </div>
-            </Tab>
-            <Tab eventKey={2} title="Cash Assets">
               <div className="row subproperty-item-list-container">
                 <ul className="list-unstyled properties-item">
                   {subPropertyNode}
                 </ul>
               </div>
+            </Tab>
+            <Tab eventKey={2} title="Cash Assets">
+              <CashAssets />
             </Tab>
           </Tabs>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from 'react-bootstrap';
+//import { Grid } from 'react-bootstrap';
 import PropertyValues from './property-values';
 import PropertyName from './property-name';
 import PropertyValuesTotal from './property-values-total';
