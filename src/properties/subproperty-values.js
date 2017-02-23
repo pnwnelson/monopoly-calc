@@ -5,10 +5,9 @@ export default React.createClass({
 
 	displayName: 'SubPropertyValues',
 
-	getInitialState() {
+  getInitialState() {
 		return {
-			btnTitle: '$',
-			style: {backgroundColor: 'white'}
+			value: 'Own it?',
 		}
 	},
 
@@ -26,8 +25,7 @@ export default React.createClass({
 
 		return (
 			<div className="property-values-container">
-    		<select className="ddown" title="*" id="ddown" onClick={this.handleFinalTotal} onChange={this.handleValue} style={this.state.style}>
-    			<option selected hidden>Choose</option>
+    		<select className="ddown" title={this.state.value} id="ddown" onClick={this.handleFinalTotal} onChange={this.handleValue} style={this.state.style}>
     			<option className="unowned-box btn-selections" value={unowned}>Unowned</option>
     			<option className="mortgaged-box btn-selections" value={"$" + mortgaged}>Mortgaged</option>
     			<option className="owned-box btn-selection" value={"$" + owned}>Owned</option>

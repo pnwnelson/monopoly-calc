@@ -3,6 +3,7 @@ import React from 'react';
 import PropertyValues from './property-values';
 import PropertyName from './property-name';
 import PropertyValuesTotal from './property-values-total';
+import update from 'react-addons-update'
 
 export default React.createClass ({
   // This should be the parent/container for <PropertyName />, <PropertyValues /> and <PropertyValuesTotal />.

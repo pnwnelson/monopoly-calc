@@ -1,0 +1,38 @@
+{
+	"bills": [{
+      "id": 1,
+      "name": "$500",
+      "amount": 500,
+      "total": 0
+    }, {
+      "id": 2,
+      "name": "$100",
+      "amount": 100,
+      "total": 0
+    }, {
+      "id": 3,
+      "name": "$50",
+      "amount": 50,
+      "total": 0
+    }, {
+      "id": 4,
+      "name": "$20",
+      "amount": 20,
+      "total": 0
+    }, {
+      "id": 5,
+      "name": "$10",
+      "amount": 10,
+      "total": 0
+    },{
+      "id": 6,
+      "name": "$5",
+      "amount": 5,
+      "total": 0
+    }, {
+      "id": 7,
+      "name": "$1",
+      "amount": 1,
+      "total": 0
+    }]
+}

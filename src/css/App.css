@@ -13,7 +13,7 @@
   font-size: large;
 }*/
 
-@import 'kabelfont.css';
+@import './kabelfont.css';
 
 html {
   font-family: Kabel;
@@ -28,6 +28,7 @@ html {
   font-family: Kabel;
   font-size: 18px;
   margin-top: -5px;
+  text-align: center;
 }
 
 .selectedStyle {
@@ -49,6 +50,21 @@ html {
   background-color: white;
 
 }
+
+.logo-wrapper {
+  margin-left: 5px;
+  width: 150px;
+}
+
+.title-logo {
+  background-color: red;
+  border-radius: 4px;
+  color: white;
+  padding: 3px;
+  width: 150px; 
+  text-align: center; 
+}
+
 
 .networth-total-box {
   position: absolute;
@@ -79,6 +95,7 @@ html {
 .sub-header {
   color: gray;
   font-weight: lighter;
+  text-align: center;
 }
 
 .property-title {
@@ -245,7 +262,8 @@ html {
 /* --- Navigation Tabs --- */
 
 #asset-tabs {
-  margin-top: 100px;
+  margin-top: 109px;
+  margin-left: -15px;
 
 }
 

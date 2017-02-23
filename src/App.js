@@ -1,13 +1,13 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
-import data from './data.json'; // Bring in data from json file
-import subproperties from './subproperties.json';
-import Property from './property';
-import SubProperty from './subproperty';
-import CashAssets from './cash-assets'
+import './css/App.css';
+import data from './data/data.json'; // Bring in data from json file
+import subproperties from './data/subproperties.json';
+import bills from './data/bills.json';
+import Property from './properties/property';
+import SubProperty from './properties/subproperty';
+import CashItemsList from './cash/cash-items-list'
 import { Navbar, Nav, Tab, Tabs } from 'react-bootstrap';
-
 
 
 class NetWorthTotal extends React.Component {
@@ -28,6 +28,12 @@ class App extends React.Component {
 
   render() {
 
+    const billsNode = bills.bills.map((bill)=> {
+      return (
+        <CashItemsList key={bill.id} bill={bill} />
+      )
+    })
+
     const subPropertyNode = subproperties.subproperties.map(function(subproperty) {
       return (
         <SubProperty key={subproperty.id} subproperty={subproperty} />
@@ -44,32 +50,42 @@ class App extends React.Component {
     return (
       <div>
         <div className="app-header">
-          <h3 className="kabel-font-main">MONOPOLY</h3><h4 className="kabel-font-sub">CALCULATOR</h4>
+          <div className="logo-wrapper text-center">
+            <h3 className="kabel-font-main title-logo">MONOPOLY</h3>
+            <h4 className="kabel-font-sub">CALCULATOR</h4>
+          </div>
           <NetWorthTotal />
           <h6 className="sub-header">Figure out the net worth of the game winner</h6>
         </div>
-        <div className="row content-wrapper">
-        <div className="col-xs-12">
-          <Tabs defaultActiveKey={1} id="asset-tabs">
-            <Tab eventKey={1} title="Property Assets">
-              <div className="row property-item-list-container">
-                <ul className="list-unstyled properties-item">
-                  {propertyNode}
-                </ul>
-              </div>
-              <div className="row subproperty-item-list-container">
-                <ul className="list-unstyled properties-item">
-                  {subPropertyNode}
-                </ul>
-              </div>
-            </Tab>
-            <Tab eventKey={2} title="Cash Assets">
-              <CashAssets />
-            </Tab>
-          </Tabs>
+        <div>
+          <div className="row-fluid content-wrapper">
+          <div className="col-xs-12">
+            <Tabs defaultActiveKey={1} id="asset-tabs">
+              <Tab eventKey={1} title="Property Assets">
+                <div className="row property-item-list-container">
+                  <ul className="list-unstyled properties-item">
+                    {propertyNode}
+                  </ul>
+                </div>
+                <div className="row subproperty-item-list-container">
+                  <ul className="list-unstyled properties-item">
+                    {subPropertyNode}
+                  </ul>
+                </div>
+              </Tab>
+              <Tab eventKey={2} title="Cash Assets">
+                <div className="row property-item-list-container">
+                  <ul className="list-unstyled properties-item">
+                    {billsNode}
+                  </ul>
+                </div>
+                I can't figure out how to update the state of a json array's key and I'm getting quite ticked about it.
+              </Tab>
+            </Tabs>
+            </div>
           </div>
         </div>
-        </div>
+      </div>
     );
   }
 }

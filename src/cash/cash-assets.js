@@ -1,16 +1,10 @@
 import React from 'react';
 //import { Form, Grid } from 'react-bootstrap';
+import update from 'react-addons-update'
 
 export default React.createClass ({
 
 	displayName: 'CashAssets',
-
-	// constructor(props) {
-	// 	super(props);
-	// 	this.state = {count: ''};
-
-	// 	this.handleUserInput = this.handleUserInput.bind(this);
-	// }
 
 	getInitialState () {
 		return {
@@ -21,13 +15,28 @@ export default React.createClass ({
 			TenCount: '',
 			FiveCount: '',
 			OneCount: '',
+			cashTotal: []
 		}
+	},
+
+	handleInput(propertyName, event) {
+		const fiveHundredTotal = this.state.FiveHundredCount * 500;
+		const	oneHundredTotal = this.state.OneHundredCount * 100;
+		const cashTotal = this.state.cashTotal;
+		cashTotal[propertyName] = event.target.value;
+		this.setState({
+			cashTotal: cashTotal,
+			FiveHundredTotal: fiveHundredTotal,
+			OneHundredTotal: event.target.value
+			
+		})  
+		console.log(fiveHundredTotal)
 	},
 
 	handleFiveHundredInput(event) {
 		this.setState({
 			FiveHundredCount: event.target.value
-		})
+		})  
 		console.log("The 500# entered was " + event.target.value)
 	},
 
@@ -68,17 +77,18 @@ export default React.createClass ({
 	},
 
 	render() {
+
 		return (
 			<div className="cash-asset-container">
 				<div className="row">
 					<div className="col-xs-12">
 						<form>
 							<span className="cash-label">$500 x</span>
-							<input type="number" className="cash-number" value={this.state.FiveHundredCount} onChange={this.handleFiveHundredInput} name='count' placeholder="#" /> =
-							<span className="cash-subtotal">${this.state.FiveHundredCount * 500}</span><br/>
+							<input type="number" className="cash-number" value={this.state.cashTotal.FiveHundredCount} onChange={this.handleInput.bind(this, 'fiveHundredTotal')} name='count' placeholder="#" /> =
+							<span className="cash-subtotal">${this.fiveHundredTotal}</span><br/>
 							<span className="cash-label">$100 x</span>
-							<input type="number" className="cash-number" value={this.state.OneHundredCount} onChange={this.handleOneHundredInput} name='count' placeholder="#" /> =
-							<span className="cash-subtotal">${this.state.OneHundredCount * 100}</span><br/>
+							<input type="number" className="cash-number" value={this.state.cashTotal.OneHundredCount} onChange={this.handleInput.bind(this, 'oneHundredTotal')} name='count' placeholder="#" /> =
+							<span className="cash-subtotal">${this.oneHundredTotal}</span><br/>
 							<span className="cash-label">$50 x</span>
 							<input type="number" className="cash-number" value={this.state.FiftyCount} onChange={this.handleFiftyInput} name='count' placeholder="#" /> =
 							<span className="cash-subtotal">${this.state.FiftyCount * 50}</span><br/>
@@ -95,6 +105,7 @@ export default React.createClass ({
 							<input type="number" className="cash-number" value={this.state.OneCount} onChange={this.handleOneInput} name='count' placeholder="#" /> =
 							<span className="cash-subtotal">${this.state.OneCount * 1}</span><br/>
 						</form>
+						{this.state.cashTotal}
 					</div>
 				</div>
 			</div>

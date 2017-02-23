@@ -1,17 +1,10 @@
 import React from 'react';
-//import { DropdownButton, MenuItem, Input, Form, Grid } from 'react-bootstrap';
 
 export default React.createClass ({
 	
 	displayName: 'PropertyValues',
 	// Child to Property.
   // This component should show a drop down menu to select the state (mortgaged, houses, etc) of the Property at the end of the game
-  // constructor(props) {
-  // 	super(props);
-  // 	this.state = { value: 'Own it?' };
-
-  // 	this.handleValue = this.handleValue.bind(this)
-  // }
 
   getInitialState() {
 		return {
@@ -23,10 +16,8 @@ export default React.createClass ({
 	handleValue(event) {
 		this.setState({ value: this.props.text})
 		const propertyValueTotal = event.target.value;
-		this.props.onClick(propertyValueTotal);
+		this.props.onClick(propertyValueTotal); // I'm not understanding what this is doing, but it works
 		console.log('This is the handleValue: ' + event)
-		//finalTotal.push(propertyValueTotal) // hopefully add each property value selected to end of array
-		//console.log(finalTotal)
 	},
 
   render() {
@@ -40,7 +31,6 @@ export default React.createClass ({
     return (
     	<div className="property-values-container">
     		<select className="ddown" value={this.state.value} title="*" id="ddown" onClick={this.handleFinalTotal} onChange={this.handleValue}>
-
     			<option className="unowned-box btn-selections" value={unowned}>Unowned</option>
     			<option className="mortgaged-box btn-selections" value={"$" + mortgaged}>Mortgaged</option>
     			<option className="owned-box btn-selection" value={"$" + owned}>Owned</option>
@@ -55,7 +45,15 @@ export default React.createClass ({
   }
 })
 
-//module.exports = PropertyValues;
+
+
+
+
+
+
+
+
+
 
 // THE FOLLOWING ARE ATTEMPTS AT GETTING RESULTS I WANTED
 
