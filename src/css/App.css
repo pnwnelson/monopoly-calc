@@ -251,11 +251,14 @@ html {
   display: inline-block;
 }
 
+
+
 .cash-subtotal {
   width: 60px;
   height: 40px;
   border-radius: 4px;
   padding: 10px;
+  margin: 5px;
 /*  border: 1px solid lightgray;*/
 }
 

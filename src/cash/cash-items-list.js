@@ -1,5 +1,6 @@
 import React from 'react';
 import CashItem from './cash-item'
+import BillTotal from './bill-total'
 
 export default React.createClass ({
 
@@ -7,17 +8,13 @@ export default React.createClass ({
 
 	getInitialState() {
 		return { 
-			bills: [
-				{
-					total: 1
-				}
-			]
+			billTotal: '0'
 		}
 	},
 
 	changeBillTotal(newBillTotal) {
 		this.setState({
-			total: newBillTotal
+			billTotal: newBillTotal
 		})
 	},
 
@@ -27,7 +24,12 @@ export default React.createClass ({
 
 		return (
 			<div className="container">
-        <CashItem bill={bill} />
+				<div className="row">
+					<div className="col-xs-6 text-right">
+		        <CashItem bill={bill} onChange={this.changeBillTotal} />
+		      </div>
+	         <BillTotal billTotal={this.state.billTotal} />
+	      </div>
       </div> 
 		)
 	}
