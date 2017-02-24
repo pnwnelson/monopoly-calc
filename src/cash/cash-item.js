@@ -1,5 +1,5 @@
 import React from 'react';
-import BillTotal from './bill-total'
+import BillSubTotal from './bill-subtotal'
 
 export default React.createClass ({
 

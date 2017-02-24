@@ -2,16 +2,16 @@ import React from 'react';
 
 export default React.createClass ({
 
-	displayName: 'BillTotal',
+	displayName: 'BillSubTotal',
 
 	render () {
 
-		const billTotal = this.props.billTotal
+		const billSubTotal = this.props.billSubTotal
 
 		return (
     	<div className="col-xs-6 text-left">
     	<div className="cash-subtotal">
-    		${billTotal}
+    		${billSubTotal}
     	</div>
     	</div>
 		)
