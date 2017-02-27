@@ -7,6 +7,7 @@ import bills from './data/bills.json';
 import Property from './properties/property';
 import SubProperty from './properties/subproperty';
 import CashItemsList from './cash/cash-items-list'
+import ReactGA from 'react-ga'
 import { Navbar, Nav, Tab, Tabs } from 'react-bootstrap';
 
 
@@ -25,12 +26,30 @@ class NetWorthTotal extends React.Component {
 
 class App extends React.Component {
   // This is the main container component
+  constructor(props) {
+    super()
+
+    this.state = {
+      finalBillTotal: []
+    };
+
+    ReactGA.initialize('UA-92696610-1');
+    ReactGA.pageview('/');
+  }
+
+  handleBillChange() {
+    const test = this.state.finalBillTotal
+    this.setState({
+      finalBillTotal: test + 1
+    })
+    console.log(this.state.finalBillTotal)
+  }
 
   render() {
 
     const billsNode = bills.bills.map((bill)=> {
       return (
-        <CashItemsList key={bill.id} bill={bill} />
+        <CashItemsList key={bill.id} bill={bill} onChange={this.handleBillChange}/>
       )
     })
 
@@ -79,6 +98,7 @@ class App extends React.Component {
                     {billsNode}
                   </ul>
                 </div>
+                {this.state.finalBillTotal}<br/>
                 I can't figure out how to update the state of a json array's key and I'm getting quite ticked about it.
               </Tab>
             </Tabs>

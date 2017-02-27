@@ -7,8 +7,8 @@ export default React.createClass ({
 
 	handleInput(event) {
 		let count = event.target.value;
-		let billTotal = this.props.bill.amount * count;
-		this.props.onChange(billTotal);
+		let billSubTotal = this.props.bill.amount * count;
+		this.props.onChange(billSubTotal);
 	},
 
 	render() {

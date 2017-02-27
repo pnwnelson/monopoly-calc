@@ -4,17 +4,19 @@ import BillSubTotal from './bill-subtotal'
 
 export default React.createClass ({
 
+	
+
 	displayName: 'CashItemsList',
 
 	getInitialState() {
 		return { 
-			billSubTotal: '0'
+			billSubTotal: '0',
 		}
 	},
 
 	changeBillSubTotal(newBillSubTotal) {
 		this.setState({
-			billSubTotal: newBillSubTotal
+			billSubTotal: newBillSubTotal,
 		})
 	},
 
@@ -23,14 +25,14 @@ export default React.createClass ({
 		const { bill } = this.props
 
 		return (
-			<div className="container">
+			<div className="container-fluid">
 				<div className="row">
 					<div className="col-xs-6 text-right">
 		        <CashItem bill={bill} onChange={this.changeBillSubTotal} />
 		      </div>
-	         <BillSubTotal billSubTotal={this.state.billSubTotal} />
+	        <BillSubTotal billSubTotal={this.state.billSubTotal} />
 	      </div>
-      </div> 
+      </div> 	
 		)
 	}
 
