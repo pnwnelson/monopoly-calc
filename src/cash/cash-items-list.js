@@ -27,7 +27,7 @@ export default React.createClass ({
 		return (
 			<div className="container-fluid">
 				<div className="row">
-					<div className="col-xs-6 text-right">
+					<div className="col-xs-8 text-right">
 		        <CashItem bill={bill} onChange={this.changeBillSubTotal} />
 		      </div>
 	        <BillSubTotal billSubTotal={this.state.billSubTotal} />

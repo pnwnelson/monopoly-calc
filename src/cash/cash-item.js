@@ -18,7 +18,7 @@ export default React.createClass ({
 		return (
 			<div>
 				<form>
-					<span className="cash-label text-right">{bill.name} x</span>
+					<img src={bill.billImage} className="cash-label text-right" /> x
 					<input className="cash-number" type="number" onChange={this.handleInput} placeholder="#"/>
 				</form>
 			</div>

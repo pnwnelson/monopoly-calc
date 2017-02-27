@@ -9,7 +9,7 @@ export default React.createClass ({
 		const billSubTotal = this.props.billSubTotal
 
 		return (
-    	<div className="col-xs-6 text-left">
+    	<div className="col-xs-4 text-left">
     	<div className="cash-subtotal">
     		${billSubTotal}
     	</div>
