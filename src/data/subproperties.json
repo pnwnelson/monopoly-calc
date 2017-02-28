@@ -39,11 +39,12 @@
  {
    "id": 5,
    "className": "subproperty-title",
-   "name": "Utility Company",
-   "abbrName": "UC",
+   "name": "Electric Company",
+   "abbrName": "EC",
    "unowned": 0,
    "owned": 150,
-   "mortgaged": 75
+   "mortgaged": 75,
+   "propertyImg": "electricCo.png"
  },
  {
    "id": 6,
@@ -52,7 +53,8 @@
    "abbrName": "WW",
    "unowned": 0,
    "owned": 150,
-   "mortgaged": 75
+   "mortgaged": 75,
+   "propertyImg": "waterWorks.png"
  }
 ]
 }

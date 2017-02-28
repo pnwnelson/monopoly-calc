@@ -1,11 +1,15 @@
 import React from 'react';
 import BillSubTotal from './bill-subtotal'
 
+// Dynamically creating an input field (and it's label) for bill calculation.
+// Sibling to <BillSubTotal />
+// Parent is <CashItemList />
+
 export default React.createClass ({
 
 	displayName: 'CashItem',
 
-	handleInput(event) {
+	handleInput(event) { // This is part of changing subtotal props.
 		let count = event.target.value;
 		let billSubTotal = this.props.bill.amount * count;
 		this.props.onChange(billSubTotal);

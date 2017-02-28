@@ -1,6 +1,10 @@
 import React from 'react';
-//import { Form, Grid } from 'react-bootstrap';
 import update from 'react-addons-update'
+
+// This is currently not being used. This is a very long way of manually displaying all the bills and their subtotals.
+// I ended up dymnaically creating the bill sets. 
+// I was in the middle of trying to find a way to create a final total when I abandoned this approach.
+// However, I saved it in case I needed to use this approach to create a final total.
 
 export default React.createClass ({
 

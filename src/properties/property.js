@@ -1,20 +1,21 @@
 import React from 'react';
-//import { Grid } from 'react-bootstrap';
 import PropertyValues from './property-values';
 import PropertyName from './property-name';
 import PropertyValuesTotal from './property-values-total';
 //import update from 'react-addons-update'
 
+// This should be the parent/container for <PropertyName />, <PropertyValues /> and <PropertyValuesTotal />.
+// This should be a child to <App />
+
 export default React.createClass ({
-  // This should be the parent/container for <PropertyName />, <PropertyValues /> and <PropertyValuesTotal />.
-  // This should be a child to <App />
+
   displayName: 'Property',
 
   getInitialState() {
     return { propertyValueTotal: ''};
   },
 
-  changeValueTotal(newValueTotal) {
+  changeValueTotal(newValueTotal) { // This changes the subtotal value of each Property component
   	this.setState ({
   		propertyValueTotal: newValueTotal
   	})

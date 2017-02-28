@@ -1,10 +1,11 @@
 import React from 'react';
 
+// Child to Property.
+// This component should show a drop down menu to select the state (mortgaged, houses, etc) of the Property at the end of the game
+
 export default React.createClass ({
 	
 	displayName: 'PropertyValues',
-	// Child to Property.
-  // This component should show a drop down menu to select the state (mortgaged, houses, etc) of the Property at the end of the game
 
   getInitialState() {
 		return {
@@ -12,11 +13,11 @@ export default React.createClass ({
 		}
 	},
 
-	// This handler is to pass off the selected total value of the property to the third box
+	// This handler is to pass off the selected total value of the property to the third (subtotal value) box
 	handleValue(event) {
 		this.setState({ value: this.props.text})
 		const propertyValueTotal = event.target.value;
-		this.props.onClick(propertyValueTotal); // I'm not understanding what this is doing, but it works
+		this.props.onClick(propertyValueTotal); // I'm not understanding how this is working, but it does.
 		console.log('This is the handleValue: ' + event)
 	},
 
@@ -55,7 +56,7 @@ export default React.createClass ({
 
 
 
-// THE FOLLOWING ARE ATTEMPTS AT GETTING RESULTS I WANTED
+// THE FOLLOWING ARE ATTEMPTS AT GETTING RESULTS I WANTED. READ AT YOUR OWN RISK.
 
 	// getInitialState() {
 	// 	return {
@@ -64,7 +65,7 @@ export default React.createClass ({
 	// 	}
 	// }
 
-    // This method works with styling, but it won't let me use the value= attribute to populate the total box.
+    // This method works with styling the buttons, but it won't let me use the value= attribute to populate the total box.
     // return (
     //   <div className="property-values-container">
     //     <DropdownButton className="ddown" id="ddown" title={this.state.btnTitle} value="$" onSelect={this.handleChange	} style={this.state.style}>

@@ -1,17 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './css/App.css';
-import data from './data/data.json'; // Bring in data from json file
+import data from './data/data.json';
 import subproperties from './data/subproperties.json';
 import bills from './data/bills.json';
 import Property from './properties/property';
 import SubProperty from './properties/subproperty';
 import CashItemsList from './cash/cash-items-list'
-import ReactGA from 'react-ga'
+import ReactGA from 'react-ga' // Google Analytics
 import { Navbar, Nav, Tab, Tabs } from 'react-bootstrap';
 
 
 class NetWorthTotal extends React.Component {
+
+// Compenant to show the combined final totals for <Properties /> and <CashItemList /> Not sure where to put this.
 
   render() {
 
@@ -26,18 +28,19 @@ class NetWorthTotal extends React.Component {
 
 class App extends React.Component {
   // This is the main container component
+
   constructor(props) {
     super()
 
     this.state = {
-      finalBillTotal: []
+      finalBillTotal: [] // Initializing array to store all the subtotals together?
     };
 
-    ReactGA.initialize('UA-92696610-1');
+    ReactGA.initialize('UA-92696610-1'); // Google Analytics stuff
     ReactGA.pageview('/');
   }
 
-  handleBillChange() {
+  handleBillChange() { // Attempt at creating a final total when subtotals change.
     const test = this.state.finalBillTotal
     this.setState({
       finalBillTotal: test + 1
