@@ -15,10 +15,13 @@ export default React.createClass ({
 		}
 	},
 
-	changeBillSubTotal(newBillSubTotal) { // This changes the subtotal of each bill component
-		this.setState({
-			billSubTotal: newBillSubTotal,
+	changeBillSubTotal(newBillSubTotal) { 
+		this.setState({ // This changes the subtotal of each bill component
+			billSubTotal: newBillSubTotal
 		})
+		// I also want it to keep sending the newBillSubTotal up to the Parent so I can update the finalBillTotal state
+		// so that's what this next line is for. 
+		this.props.onChange(newBillSubTotal);  
 	},
 
 	render() {
@@ -29,7 +32,7 @@ export default React.createClass ({
 			<div className="container-fluid">
 				<div className="row">
 					<div className="col-xs-8 text-right">
-		        <CashItem key={bill.id} bill={bill} onChange={this.changeBillSubTotal} />
+		        <CashItem key={bill.id} bill={bill} onChange={this.changeBillSubTotal} /* billSubTotalonChange={this.props.onChange} *//>
 		      </div>
 	        <BillSubTotal key={bill.id} billSubTotal={this.state.billSubTotal} />
 	      </div>

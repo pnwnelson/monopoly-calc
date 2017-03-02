@@ -11,8 +11,9 @@ export default React.createClass ({
 
 	handleInput(event) { // This is part of changing subtotal props.
 		let count = event.target.value;
-		let billSubTotal = this.props.bill.amount * count;
-		this.props.onChange(billSubTotal);
+		let billSubTotal = this.props.bill.amount * count; // Multiplying the bill value with the number of that bill  (e.g $50 x 3)
+		this.props.onChange(billSubTotal); // I don't know how this works
+		// Possibly add something here to append billSubTotal to an array?
 	},
 
 	render() {

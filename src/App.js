@@ -13,14 +13,16 @@ import { Navbar, Nav, Tab, Tabs } from 'react-bootstrap';
 
 class NetWorthTotal extends React.Component {
 
-// Compenant to show the combined final totals for <Properties /> and <CashItemList /> Not sure where to put this.
-
+// Componant to show the combined final totals for <Properties /> and <CashItemList /> Not sure where to put this.
+  
   render() {
+
+    const total = this.props.finalBillTotal.reduce((a,b) => a + b, 0);
 
     return (
       <div className="networth-total-box">
         <h6 className="total-header">TOTAL</h6>
-        <div></div>
+        <div className="total-number">$ {total}</div>
       </div>
     )
   }
@@ -28,31 +30,33 @@ class NetWorthTotal extends React.Component {
 
 class App extends React.Component {
   // This is the main container component
+  // This should own the final total state?
 
   constructor(props) {
     super()
 
     this.state = {
-      finalBillTotal: [] // Initializing array to store all the subtotals together?
+      finalBillTotal: [] // Initializing array to store all the subtotals together.
     };
+    this.handleInput = this.handleInput.bind(this)
 
     ReactGA.initialize('UA-92696610-1'); // Google Analytics stuff
     ReactGA.pageview('/');
   }
 
-  handleBillChange() { // Attempt at creating a final total when subtotals change.
-    const test = this.state.finalBillTotal
+  handleInput(newFinalBillTotal) { // Attempt at creating a final total when subtotals change.
+    console.log(newFinalBillTotal) // This is logging the calculated bill subtotal - which is what I want. 
     this.setState({
-      finalBillTotal: test + 1
+      finalBillTotal: this.finalBillTotal.push(newFinalBillTotal) // Getting "cannot read property 'push' of undefined"
     })
-    console.log(this.state.finalBillTotal)
+    
   }
 
   render() {
 
     const billsNode = bills.bills.map((bill)=> {
       return (
-        <CashItemsList key={bill.id} bill={bill} onChange={this.handleBillChange}/>
+        <CashItemsList finalBillTotal={this.state.finalBillTotal} key={bill.id} bill={bill} onChange={this.handleInput} />
       )
     })
 
@@ -76,7 +80,7 @@ class App extends React.Component {
             <h3 className="kabel-font-main title-logo">MONOPOLY</h3>
             <h4 className="kabel-font-sub">CALCULATOR</h4>
           </div>
-          <NetWorthTotal />
+          <NetWorthTotal finalBillTotal={this.state.finalBillTotal} />
           <h6 className="sub-header">Figure out the net worth of the game winner</h6>
         </div>
         <div>
@@ -101,7 +105,6 @@ class App extends React.Component {
                     {billsNode}
                   </ul>
                 </div>
-                {this.state.finalBillTotal}<br/>
                 I can't figure out how to update the state of a json array's key and I'm getting quite ticked about it.
               </Tab>
             </Tabs>

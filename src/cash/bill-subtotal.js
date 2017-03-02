@@ -10,12 +10,10 @@ export default React.createClass ({
 
 	render () {
 
-		const billSubTotal = this.props.billSubTotal
-
 		return (
     	<div className="col-xs-4 text-left">
     	<div className="cash-subtotal">
-    		${billSubTotal}
+    		${this.props.billSubTotal}
     	</div>
     	</div>
 		)
