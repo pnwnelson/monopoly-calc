@@ -18,7 +18,7 @@ class NetWorthTotal extends React.Component {
   render() {
 
     const bt = this.props.billFinalTotal
-    const total = bt[1] + bt[2] + bt[3] + bt[4] + bt[5] + bt[6]
+    const total = bt[1] + bt[2] + bt[3] + bt[4] + bt[5] + bt[6] + bt[7]
     return (
       <div className="networth-total-box">
         <h6 className="total-header">TOTAL</h6>
