@@ -1,4 +1,5 @@
 import React from 'react';
+import UniqueIdMixin from 'unique-id-mixin'
 import BillSubTotal from './bill-subtotal'
 
 // Dynamically creating an input field (and it's label) for bill calculation.
@@ -6,6 +7,8 @@ import BillSubTotal from './bill-subtotal'
 // Parent is <CashItemList />
 
 export default React.createClass ({
+
+	mixins: [ UniqueIdMixin ],
 
 	displayName: 'CashItem',
 
@@ -24,7 +27,7 @@ export default React.createClass ({
 			<div>
 				<form>
 					<img src={bill.billImage} className="cash-label text-right" /> x
-					<input className="cash-number" type="number" onChange={this.handleInput} placeholder="#"/>
+					<input id={this.getNextUid()} className="cash-number" type="number" onChange={this.handleInput} placeholder="#"/>
 				</form>
 			</div>
 

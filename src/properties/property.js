@@ -19,6 +19,7 @@ export default React.createClass ({
   	this.setState ({
   		propertyValueTotal: newValueTotal
   	})
+    this.props.onChange(newValueTotal);
   },
 
   render() {
@@ -31,8 +32,8 @@ export default React.createClass ({
         <div className="row properties-item">
           <div className="col-xs-12">
             <PropertyName property={property} />
-            <PropertyValues property={property} onClick={this.changeValueTotal} />
-            <PropertyValuesTotal propertyValueTotal={this.state.propertyValueTotal} />
+            <PropertyValues  property={property} onClick={this.changeValueTotal} />
+            <PropertyValuesTotal  propertyValueTotal={this.state.propertyValueTotal} />
           </div>
         </div>
       </div> 

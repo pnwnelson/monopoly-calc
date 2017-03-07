@@ -4,18 +4,18 @@ import React from 'react';
 // Sibling to <CashItem />
 // Parent is <CashItemList />
 
-export default React.createClass ({
-
-	displayName: 'BillSubTotal',
+class BillSubTotal extends React.Component {
 
 	render () {
 
 		return (
-    	<div className="col-xs-4 text-left">
+    	<div className="col-xs-6 text-left">
     	<div className="cash-subtotal">
-    		${this.props.billSubTotal}
+    		= ${this.props.billSubTotal}
     	</div>
     	</div>
 		)
 	}
-})
+}
+
+export default BillSubTotal;

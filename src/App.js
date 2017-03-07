@@ -17,12 +17,12 @@ class NetWorthTotal extends React.Component {
   
   render() {
 
-    const total = this.props.finalBillTotal.reduce((a,b) => a + b, 0);
-
+    const bt = this.props.billFinalTotal
+    const total = bt[1] + bt[2] + bt[3] + bt[4] + bt[5] + bt[6]
     return (
       <div className="networth-total-box">
         <h6 className="total-header">TOTAL</h6>
-        <div className="total-number">$ {total}</div>
+        <div className="total-number">${total}</div>
       </div>
     )
   }
@@ -36,42 +36,49 @@ class App extends React.Component {
     super()
 
     this.state = {
-      finalBillTotal: [] // Initializing array to store all the subtotals together.
+      billFinalTotal: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0},
+      //finalPropertyValueTotal: [] // Initializing array to store all the subtotals.
     };
-    this.handleInput = this.handleInput.bind(this)
+    this.handleCashInput = this.handleCashInput.bind(this)
+    //this.handlePropertyValueInput = this.handlePropertyValueInput.bind(this)
 
     ReactGA.initialize('UA-92696610-1'); // Google Analytics stuff
     ReactGA.pageview('/');
   }
 
-  handleInput(newFinalBillTotal) { // Attempt at creating a final total when subtotals change.
-    console.log(newFinalBillTotal) // This is logging the calculated bill subtotal - which is what I want. 
+  handleCashInput(id, newBillFinalTotal) { // This is logging the calculated bill subtotal - which is what I want. 
+    const cashTemp = { ...this.state.billFinalTotal, [id]: +newBillFinalTotal}
     this.setState({
-      finalBillTotal: this.finalBillTotal.push(newFinalBillTotal) // Getting "cannot read property 'push' of undefined"
-    })
-    
+      billFinalTotal: cashTemp
+    }) 
   }
+
+  // handlePropertyValueInput(newFinalPropertyValueTotal) {
+  //   console.log('property subtotal: ' + newFinalPropertyValueTotal)
+  //   // const propertyTemp = this.state.finalPropertyValueTotal.push(newFinalPropertyValueTotal)
+  //   console.log('finalPropertyValueTotal array contents: ' + propertyTemp)
+  //   console.log('final prop total: ' + this.state.finalPropertyValueTotal.reduce((a,b) => a + b, 0 ))
+  // }
 
   render() {
 
     const billsNode = bills.bills.map((bill)=> {
       return (
-        <CashItemsList finalBillTotal={this.state.finalBillTotal} key={bill.id} bill={bill} onChange={this.handleInput} />
+        <CashItemsList key={bill.id} bill={bill} onChange={this.handleCashInput} />
       )
     })
 
-    const subPropertyNode = subproperties.subproperties.map(function(subproperty) {
+    const subPropertyNode = subproperties.subproperties.map((subproperty)=> {
       return (
         <SubProperty key={subproperty.id} subproperty={subproperty} />
-      );
-    });
+      )
+    })
 
-    const propertyNode = data.properties.map(function(property) {
+    const propertyNode = data.properties.map((property)=> {
       return (  
-        <Property key={property.id} property={property} />
-
-      );
-    });
+        <Property key={property.id} property={property} onChange={this.handlePropertyValueInput} />
+      )
+    })
 
     return (
       <div>
@@ -80,7 +87,7 @@ class App extends React.Component {
             <h3 className="kabel-font-main title-logo">MONOPOLY</h3>
             <h4 className="kabel-font-sub">CALCULATOR</h4>
           </div>
-          <NetWorthTotal finalBillTotal={this.state.finalBillTotal} />
+          <NetWorthTotal billFinalTotal={this.state.billFinalTotal} />
           <h6 className="sub-header">Figure out the net worth of the game winner</h6>
         </div>
         <div>
@@ -105,7 +112,11 @@ class App extends React.Component {
                     {billsNode}
                   </ul>
                 </div>
-                I can't figure out how to update the state of a json array's key and I'm getting quite ticked about it.
+                <div className="row text-center">
+                  <div className="col-xs-12 cash-total">
+                    <h4>Cash Total: </h4>
+                  </div>
+                </div>
               </Tab>
             </Tabs>
             </div>
