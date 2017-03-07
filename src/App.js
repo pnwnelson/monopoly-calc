@@ -36,7 +36,7 @@ class App extends React.Component {
     super()
 
     this.state = {
-      billFinalTotal: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0},
+      billFinalTotal: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0},
       //finalPropertyValueTotal: [] // Initializing array to store all the subtotals.
     };
     this.handleCashInput = this.handleCashInput.bind(this)
