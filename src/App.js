@@ -175,7 +175,7 @@ class App extends React.Component {
                     {billsNode}
                   </ul>
                 </div>
-                <div className="row text-center">
+                <div className="row cash-total-box text-center">
                   <CashAssetsTotal billFinalTotal={this.state.billFinalTotal} />
                 </div>
               </Tab>
