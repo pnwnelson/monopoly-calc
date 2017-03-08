@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from './logo.svg';
 import './css/App.css';
 import './css/properties.css';
 import './css/cashAssets.css';

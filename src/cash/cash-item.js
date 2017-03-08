@@ -1,5 +1,4 @@
 import React from 'react';
-import UniqueIdMixin from 'unique-id-mixin'
 import BillSubTotal from './bill-subtotal'
 
 // Dynamically creating an input field (and it's label) for bill calculation.
@@ -7,8 +6,6 @@ import BillSubTotal from './bill-subtotal'
 // Parent is <CashItemList />
 
 export default React.createClass ({
-
-	mixins: [ UniqueIdMixin ],
 
 	displayName: 'CashItem',
 

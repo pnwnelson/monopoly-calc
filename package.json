@@ -3,16 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-scripts": "0.8.5",
-    "unique-id-mixin": "^1.0.0"
+    "react-scripts": "0.8.5"
   },
   "dependencies": {
     "bootstrap": "^3.3.7",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.2",
-    "redux": "^3.6.0",
-    "redux-logger": "^2.8.2"
+    "react-dom": "^15.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
