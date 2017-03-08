@@ -10,14 +10,22 @@ export default React.createClass({
 
   render() {
 
-    const name = this.props.subproperty.abbrName // Showing just the first three letters of Property name.
+    const abbrName = this.props.subproperty.abbrName // Showing just the first three letters of Property name.
+    const fullName = this.props.subproperty.name
 
     return (
       
       <div className="property-title-container">
-        <div className={this.props.subproperty.className}>
-          <p>{name}</p>
-        </div>
+        <div className="property-name-abbr">
+            <div className={this.props.subproperty.className}>
+              <p>{abbrName}</p>
+            </div>
+          </div>
+          <div className="property-name-full">
+            <div className={this.props.subproperty.className}>
+              <p>{fullName}</p>
+            </div>
+          </div>
       </div>  
     )
   }

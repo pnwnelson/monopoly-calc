@@ -19,6 +19,10 @@ html {
   font-family: Kabel;
 }
 
+.row-centered {
+  text-align: center !important;
+}
+
 .kabel-font-main {
   font-family: Kabel;
   font-size: 24px;
@@ -136,7 +140,7 @@ html {
 }
 
 .ddown {
-  width: 100px;
+  width: 105px;
   height: 40px;
   border-radius: 4px;
   background-color: white;

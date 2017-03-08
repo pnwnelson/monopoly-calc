@@ -50,6 +50,7 @@
   font-size: 18px;
   font-weight: 300;
   margin-top: 10px;
+  margin-bottom: 30px;
   color: gray;
   border-radius: 3px;
 
@@ -62,6 +63,11 @@
 }
 
 .cash-total > p {
+  display: inline-block;
   font-size: 12px;
+  width: 100px;
+  border-top: 1px solid lightgray;
+  padding-top: 5px;
+
 }
 

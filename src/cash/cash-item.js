@@ -1,5 +1,4 @@
 import React from 'react';
-import BillSubTotal from './bill-subtotal'
 
 // Dynamically creating an input field (and it's label) for bill calculation.
 // Sibling to <BillSubTotal />
@@ -22,7 +21,7 @@ export default React.createClass ({
 		return (
 			<div>
 				<form>
-					<img src={bill.billImage} className="cash-label text-right" /> x
+					<img src={bill.billImage} alt={bill.imgAlt} className="cash-label text-right" /> x
 					<input className="cash-number" type="number" onChange={this.handleInput} placeholder="#"/>
 				</form>
 			</div>

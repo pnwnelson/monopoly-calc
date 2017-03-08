@@ -1,7 +1,7 @@
 
 
 .property-title {
-  width: 60px;
+  width: 200px;
   height: 40px;
   border-radius: 4px;
   color: white;
@@ -9,7 +9,7 @@
 }
 
 .subproperty-title {
-  width: 60px;
+  width: 200px;
   height: 40px;
   border-radius: 4px;
   color: gray;
@@ -26,7 +26,7 @@
 }
 
 .property-title-container {
-  width: 60px;
+  width: 200px;
   height: 40px;
   margin: 5px;
   float: left;
@@ -34,7 +34,7 @@
 }
 
 .subproperty-title-container {
-  width: 40px;
+  width: 200px;
   height: 40px;
   margin: 5px;
   float: left;
@@ -115,4 +115,31 @@
 
 .blue {
   background-color: rgb(0, 114, 186);
+}
+
+.property-name-abbr {
+  display: none;
+}
+
+@media (max-width: 768px) {
+
+  .property-name-abbr {
+    display: inline-block;
+  }
+
+  .property-name-full {
+    display: none;
+  }
+
+  .property-title {
+    width: 60px;
+  }
+
+  .subproperty-title {
+    width: 60px;
+  }
+
+  .property-title-container {
+    width: 60px;
+  }
 }

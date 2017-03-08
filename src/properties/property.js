@@ -27,8 +27,8 @@ export default React.createClass ({
 
     return (
       
-      <div className="container">
-        <div className="row properties-item">
+      <div className="container-fluid">
+        <div className="row-fluid properties-item">
           <div className="col-xs-12">
             <PropertyName property={property} />
             <PropertyValues  property={property} onClick={this.changeValueTotal} />
