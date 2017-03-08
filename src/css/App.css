@@ -90,14 +90,15 @@ html {
   margin: 2px;
   color: gray;
   font-weight: lighter;
+  font-size: 10px;
 }
 
 .total-number {
   text-align: center;
   font-size: 24px;
-  font-weight: 500;
-  color: white;
-  text-shadow: 2px 2px lightgray;
+  font-weight: 300;
+  color: gray;
+  margin-top: -5px;
 }
 
 .sub-header {

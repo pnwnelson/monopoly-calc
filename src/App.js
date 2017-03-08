@@ -34,7 +34,7 @@ class NetWorthTotal extends React.Component {
 
     return (
       <div className="networth-total-box">
-        <h6 className="total-header">TOTAL</h6>
+        <h6 className="total-header">YOUR NET WORTH</h6>
         <div className="total-number">${totalWithCommas}</div>
       </div>
     )
@@ -49,13 +49,25 @@ class CashAssetsTotal extends React.Component {
       return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
     }
 
+    function incomeTax() {
+      if (taxTotal <= 200) {
+        return taxTotal
+      } else {
+        return 200
+      }
+    }
+
     const bt = this.props.billFinalTotal
     const total = bt[1] + bt[2] + bt[3] + bt[4] + bt[5] + bt[6] + bt[7]
     const totalWithCommas = numberWithCommas(total)
+    const taxTotal = Math.round(total * .10)
 
     return (
       <div>
-        <div className="cash-total text-center"><h4>CASH TOTAL: ${totalWithCommas}</h4></div>
+        <div className="cash-total text-center">
+          <h4>CASH TOTAL: ${totalWithCommas}</h4>
+          <p>INCOME TAX: ${incomeTax(taxTotal)}</p>
+        </div>
       </div>
     )
   }

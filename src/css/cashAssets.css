@@ -49,7 +49,7 @@
   border: 1px solid lightgray;
   font-size: 18px;
   font-weight: 300;
-  margin-top: 30px;
+  margin-top: 10px;
   color: gray;
   border-radius: 3px;
 
@@ -59,5 +59,9 @@
   font-size: 18px;
   font-weight: 300;
   padding: 5px 30px 5px 30px;
+}
+
+.cash-total > p {
+  font-size: 12px;
 }
 
