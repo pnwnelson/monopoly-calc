@@ -1,22 +1,24 @@
 import React from 'react';
-//import { Grid } from 'react-bootstrap';
 import SubPropertyValues from './subproperty-values';
 import SubPropertyName from './subproperty-name';
 import SubPropertyValuesTotal from './subproperty-values-total';
 
+// This should be the parent/container for <PropertyName />, <PropertyValues /> and <PropertyValuesTotal />.
+// This should be a child to <App />
+
 export default React.createClass ({
-  // This should be the parent/container for <PropertyName />, <PropertyValues /> and <PropertyValuesTotal />.
-  // This should be a child to <App />
+
   displayName: 'SubProperty',
 
   getInitialState() {
     return { subPropertyValueTotal: ''};
   },
 
-  changeValueTotal(newValueTotal) {
-  	this.setState ({
-  		subPropertyValueTotal: newValueTotal
-  	})
+  changeSubValueTotal(newSubValueTotal) { // This changes the subtotal value of each Property component
+    this.setState ({
+      subPropertyValueTotal: newSubValueTotal
+    })
+    this.props.onChange(this.props.subproperty.id, newSubValueTotal);
   },
 
   render() {
@@ -29,7 +31,7 @@ export default React.createClass ({
         <div className="row properties-item">
           <div className="col-xs-12">
             <SubPropertyName subproperty={subproperty} />
-            <SubPropertyValues subproperty={subproperty} onClick={this.changeValueTotal} />
+            <SubPropertyValues subproperty={subproperty} onClick={this.changeSubValueTotal} />
             <SubPropertyValuesTotal subPropertyValueTotal={this.state.subPropertyValueTotal} />
           </div>
         </div>

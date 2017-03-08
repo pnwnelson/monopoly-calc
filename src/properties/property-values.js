@@ -15,10 +15,9 @@ export default React.createClass ({
 
 	// This handler is to pass off the selected total value of the property to the third (subtotal value) box
 	handleValue(event) {
-		this.setState({ value: this.props.text})
+		this.setState({ value: event.target.value})
 		const propertyValueTotal = event.target.value;
-		this.props.onClick(propertyValueTotal); // I'm not understanding how this is working, but it does.
-		console.log('This is the handleValue: ' + event)
+		this.props.onClick(propertyValueTotal); 
 	},
 
   render() {
@@ -31,15 +30,15 @@ export default React.createClass ({
     // This menthod will let me use the value= attribute and populates the total box, but won't let me style it.
     return (
     	<div className="property-values-container">
-    		<select className="ddown" value={this.state.value} title="*" id="ddown" onClick={this.handleFinalTotal} onChange={this.handleValue}>
+    		<select className="ddown" value={this.state.value} title="*" id="ddown" onChange={this.handleValue}>
     			<option className="unowned-box btn-selections" value={unowned}>Unowned</option>
-    			<option className="mortgaged-box btn-selections" value={"$" + mortgaged}>Mortgaged</option>
-    			<option className="owned-box btn-selection" value={"$" + owned}>Owned</option>
-    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 1))}>1 house</option>
-    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 2))}>2 houses</option>
-    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 3))}>3 houses</option>
-    			<option className="green btn-selections" value={"$" + (owned + (houseCost * 4))}>4 houses</option>
-    			<option className="red btn-selections" value={"$" + (owned + (houseCost * 5))}>Hotel</option>
+    			<option className="mortgaged-box btn-selections" value={mortgaged}>Mortgaged</option>
+    			<option className="owned-box btn-selection" value={owned}>Owned</option>
+    			<option className="green btn-selections" value={owned + (houseCost * 1)}>1 house</option>
+    			<option className="green btn-selections" value={owned + (houseCost * 2)}>2 houses</option>
+    			<option className="green btn-selections" value={owned + (houseCost * 3)}>3 houses</option>
+    			<option className="green btn-selections" value={owned + (houseCost * 4)}>4 houses</option>
+    			<option className="red btn-selections" value={owned + (houseCost * 5)}>Hotel</option>
     		</select>
     	</div>
     )

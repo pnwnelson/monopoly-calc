@@ -95,9 +95,9 @@ html {
 .total-number {
   text-align: center;
   font-size: 24px;
-  font-weight: lighter;
+  font-weight: 500;
   color: white;
-  text-shadow: 1px 1px lightgray;
+  text-shadow: 2px 2px lightgray;
 }
 
 .sub-header {

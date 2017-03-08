@@ -18,7 +18,14 @@ class NetWorthTotal extends React.Component {
   render() {
 
     const bt = this.props.billFinalTotal
-    const total = bt[1] + bt[2] + bt[3] + bt[4] + bt[5] + bt[6] + bt[7]
+    const pt = this.props.propertyFinalTotal 
+    const spt = this.props.subPropertyFinalTotal
+    const total = 
+    bt[1] + bt[2] + bt[3] + bt[4] + bt[5] + bt[6] + bt[7] + // Bills
+    pt[1] + pt[2] + pt[3] + pt[4] + pt[5] + pt[6] + pt[7] + pt[8] + pt[9] + pt[10] + pt[11] + // Properties
+    pt[12] + pt[13] + pt[14] + pt[15] + pt[16] + pt[17] + pt[18] + pt[19] + pt[20] + pt[21] + pt[22] + //Properties
+    spt[1] + spt[2] + spt[3] + spt[4] + spt[5] + spt[6] // Sub Properites
+
     return (
       <div className="networth-total-box">
         <h6 className="total-header">TOTAL</h6>
@@ -30,35 +37,49 @@ class NetWorthTotal extends React.Component {
 
 class App extends React.Component {
   // This is the main container component
-  // This should own the final total state?
 
   constructor(props) {
     super()
 
     this.state = {
-      billFinalTotal: {1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0},
-      //finalPropertyValueTotal: [] // Initializing array to store all the subtotals.
+      billFinalTotal: {
+        1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0},
+      propertyFinalTotal: {
+        1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0, 7: 0, 8: 0, 9: 0, 
+        10: 0, 11: 0, 12: 0, 13: 0, 14: 0, 15: 0, 16: 0, 17:0, 18: 0, 19: 0,
+        20: 0, 21: 0, 22: 0},
+      subPropertyFinalTotal: {
+        1: 0, 2: 0, 3: 0, 4: 0, 5: 0, 6: 0
+      }
     };
     this.handleCashInput = this.handleCashInput.bind(this)
-    //this.handlePropertyValueInput = this.handlePropertyValueInput.bind(this)
+    this.handlePropertyValueInput = this.handlePropertyValueInput.bind(this)
+    this.handleSubPropertyValueInput = this.handleSubPropertyValueInput.bind(this)
 
     ReactGA.initialize('UA-92696610-1'); // Google Analytics stuff
     ReactGA.pageview('/');
   }
 
-  handleCashInput(id, newBillFinalTotal) { // This is logging the calculated bill subtotal - which is what I want. 
+  handleCashInput(id, newBillFinalTotal) {  
     const cashTemp = { ...this.state.billFinalTotal, [id]: +newBillFinalTotal}
     this.setState({
       billFinalTotal: cashTemp
     }) 
   }
 
-  // handlePropertyValueInput(newFinalPropertyValueTotal) {
-  //   console.log('property subtotal: ' + newFinalPropertyValueTotal)
-  //   // const propertyTemp = this.state.finalPropertyValueTotal.push(newFinalPropertyValueTotal)
-  //   console.log('finalPropertyValueTotal array contents: ' + propertyTemp)
-  //   console.log('final prop total: ' + this.state.finalPropertyValueTotal.reduce((a,b) => a + b, 0 ))
-  // }
+  handlePropertyValueInput(id, newPropertyValueFinalTotal) {
+    const propertyTemp = { ...this.state.propertyFinalTotal, [id]: +newPropertyValueFinalTotal}
+    this.setState({
+      propertyFinalTotal: propertyTemp
+    })
+  }
+
+  handleSubPropertyValueInput(id, newFinalSubPropertyValueTotal) {
+    const subPropertyTemp = { ...this.state.subPropertyFinalTotal, [id]: +newFinalSubPropertyValueTotal}
+    this.setState({
+      subPropertyFinalTotal: subPropertyTemp
+    })
+  }
 
   render() {
 
@@ -68,15 +89,15 @@ class App extends React.Component {
       )
     })
 
-    const subPropertyNode = subproperties.subproperties.map((subproperty)=> {
-      return (
-        <SubProperty key={subproperty.id} subproperty={subproperty} />
-      )
-    })
-
     const propertyNode = data.properties.map((property)=> {
       return (  
         <Property key={property.id} property={property} onChange={this.handlePropertyValueInput} />
+      )
+    })
+
+    const subPropertyNode = subproperties.subproperties.map((subproperty)=> {
+      return (
+        <SubProperty key={subproperty.id} subproperty={subproperty} onChange={this.handleSubPropertyValueInput} />
       )
     })
 
@@ -87,7 +108,7 @@ class App extends React.Component {
             <h3 className="kabel-font-main title-logo">MONOPOLY</h3>
             <h4 className="kabel-font-sub">CALCULATOR</h4>
           </div>
-          <NetWorthTotal billFinalTotal={this.state.billFinalTotal} />
+          <NetWorthTotal billFinalTotal={this.state.billFinalTotal} propertyFinalTotal={this.state.propertyFinalTotal} subPropertyFinalTotal={this.state.subPropertyFinalTotal} />
           <h6 className="sub-header">Figure out the net worth of the game winner</h6>
         </div>
         <div>

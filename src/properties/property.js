@@ -2,7 +2,6 @@ import React from 'react';
 import PropertyValues from './property-values';
 import PropertyName from './property-name';
 import PropertyValuesTotal from './property-values-total';
-//import update from 'react-addons-update'
 
 // This should be the parent/container for <PropertyName />, <PropertyValues /> and <PropertyValuesTotal />.
 // This should be a child to <App />
@@ -19,7 +18,7 @@ export default React.createClass ({
   	this.setState ({
   		propertyValueTotal: newValueTotal
   	})
-    this.props.onChange(newValueTotal);
+    this.props.onChange(this.props.property.id, newValueTotal);
   },
 
   render() {

@@ -14,7 +14,7 @@ export default React.createClass({
     return (
         <div className="property-value-total-box-container">
         	<div className="value-amount">
-        		{propertyValueTotal}
+        		${propertyValueTotal}
         	</div>
         </div>
       )
