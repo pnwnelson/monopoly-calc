@@ -8,10 +8,16 @@ class BillSubTotal extends React.Component {
 
 	render () {
 
+		function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+    }
+
+    const subTotalWithCommas = numberWithCommas(this.props.billSubTotal)
+
 		return (
     	<div className="col-xs-6 text-left">
     	<div className="cash-subtotal">
-    		= ${this.props.billSubTotal}
+    		= ${subTotalWithCommas}
     	</div>
     	</div>
 		)

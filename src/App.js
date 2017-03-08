@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './css/App.css';
+import './css/properties.css';
+import './css/cashAssets.css';
 import data from './data/data.json';
 import subproperties from './data/subproperties.json';
 import bills from './data/bills.json';
@@ -10,12 +12,15 @@ import CashItemsList from './cash/cash-items-list'
 import ReactGA from 'react-ga' // Google Analytics
 import { Navbar, Nav, Tab, Tabs } from 'react-bootstrap';
 
-
 class NetWorthTotal extends React.Component {
 
-// Componant to show the combined final totals for <Properties /> and <CashItemList /> Not sure where to put this.
+// Componant to show the combined final totals for <Properties /> and <CashItemList /> Not sure where to put this
   
-  render() {
+  render () {
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+    }
 
     const bt = this.props.billFinalTotal
     const pt = this.props.propertyFinalTotal 
@@ -26,10 +31,32 @@ class NetWorthTotal extends React.Component {
     pt[12] + pt[13] + pt[14] + pt[15] + pt[16] + pt[17] + pt[18] + pt[19] + pt[20] + pt[21] + pt[22] + //Properties
     spt[1] + spt[2] + spt[3] + spt[4] + spt[5] + spt[6] // Sub Properites
 
+    const totalWithCommas = numberWithCommas(total)
+
     return (
       <div className="networth-total-box">
         <h6 className="total-header">TOTAL</h6>
-        <div className="total-number">${total}</div>
+        <div className="total-number">${totalWithCommas}</div>
+      </div>
+    )
+  }
+}
+
+class CashAssetsTotal extends React.Component {
+
+  render () {
+
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+    }
+
+    const bt = this.props.billFinalTotal
+    const total = bt[1] + bt[2] + bt[3] + bt[4] + bt[5] + bt[6] + bt[7]
+    const totalWithCommas = numberWithCommas(total)
+
+    return (
+      <div>
+        <div className="cash-total text-center"><h4>CASH TOTAL: ${totalWithCommas}</h4></div>
       </div>
     )
   }
@@ -83,6 +110,10 @@ class App extends React.Component {
 
   render() {
 
+    function numberWithCommas(x) {
+      return x.toString().replace(/\B(?=(?:\d{3})+(?!\d))/g, ",");
+    }
+
     const billsNode = bills.bills.map((bill)=> {
       return (
         <CashItemsList key={bill.id} bill={bill} onChange={this.handleCashInput} />
@@ -134,9 +165,7 @@ class App extends React.Component {
                   </ul>
                 </div>
                 <div className="row text-center">
-                  <div className="col-xs-12 cash-total">
-                    <h4>Cash Total: </h4>
-                  </div>
+                  <CashAssetsTotal billFinalTotal={this.state.billFinalTotal} />
                 </div>
               </Tab>
             </Tabs>
