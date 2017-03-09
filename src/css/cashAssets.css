@@ -75,3 +75,19 @@
   margin-bottom: 50px;
 }
 
+@media (max-width: 327px) {
+  .cash-label {
+    width: 40px;
+  }
+
+  .cash-subtotal {
+    font-size: 14px;
+    width: 80px;
+  }
+
+  .cash-number {
+    font-size: 12px;
+    width: 45px;
+  }
+}
+

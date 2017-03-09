@@ -79,9 +79,6 @@ html {
   background-color: #d6f1d6; 
   border-bottom-left-radius: 10px;
   border-top-left-radius: 10px;
-  /*border-left: 1px solid gray;
-  border-bottom: 1px solid gray;
-  border-top: 1px solid gray;*/
 }
 
 .content-wrapper {
@@ -109,14 +106,6 @@ html {
   color: gray;
   font-weight: lighter;
   text-align: center;
-}
-
-.value-amount {
-  font-size: 14px;
-  text-align: center;
-  margin: 8px;
-  color: gray;
-  font-weight: 300;
 }
 
 .dropdown-menu[aria-labelledby = ddown] {
@@ -179,4 +168,21 @@ html {
 .nav-tabs > li {
   font-family: Kabel;
   font-size: 12px;
+}
+
+@media (max-width: 327px) {
+
+  .ddown {
+    width: 95px;
+    font-size: 12px;
+  }
+
+  .networth-total-box {
+    width: 100px;
+  }
+
+  .total-number {
+    font-size: 18px;
+    margin-top: 0px;
+  }
 }

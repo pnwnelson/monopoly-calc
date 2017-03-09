@@ -84,6 +84,15 @@
   color: red;
 }
 
+.value-amount {
+  font-size: 14px;
+  text-align: center;
+  margin: 8px;
+  color: gray;
+  font-weight: 300;
+}
+
+
 /* --- Property Colors --- */
 
 .brown {
@@ -142,5 +151,25 @@
 
   .property-title-container {
     width: 60px;
+  }
+}
+
+@media (max-width: 327px) {
+
+  .property-title {
+    width: 45px;
+  }
+
+  .property-title-container {
+    width: 45px;
+  }
+
+  .property-value-total-box-container {
+    width: 50px;
+  }
+
+  .value-amount {
+    font-size: 12px;
+    margin: 10px;
   }
 }
