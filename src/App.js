@@ -7,7 +7,10 @@ import subproperties from './data/subproperties.json';
 import bills from './data/bills.json';
 import Property from './properties/property';
 import SubProperty from './properties/subproperty';
-import CashItemsList from './cash/cash-items-list'
+import CashItemsList from './cash/cash-items-list';
+import AdSenseMobile from './adsense/ad-sense-mobile.js';
+import AdSenseDesktop from './adsense/ad-sense-desktop.js';
+import AdSenseResponsive from './adsense/ad-sense-responsive.js';
 import ReactGA from 'react-ga' // Google Analytics
 import { Navbar, Nav, Tab, Tabs } from 'react-bootstrap';
 
@@ -153,6 +156,8 @@ class App extends React.Component {
           <NetWorthTotal billFinalTotal={this.state.billFinalTotal} propertyFinalTotal={this.state.propertyFinalTotal} subPropertyFinalTotal={this.state.subPropertyFinalTotal} />
           <h6 className="sub-header">Figure out the net worth of the game winner</h6>
         </div>
+
+          <AdSenseResponsive client='ca-pub-6063578944512286' slot='8034558454' format='auto' />
         <div>
           <div className="row-fluid content-wrapper">
           <div className="col-xs-12">
@@ -189,4 +194,6 @@ class App extends React.Component {
 }
 
 export default App;
+
+
 

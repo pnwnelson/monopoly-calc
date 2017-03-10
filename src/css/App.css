@@ -47,7 +47,7 @@ html {
 
 .app-header {
   position: fixed;
-  margin-top: 0px;
+  margin-top: 90px;
   padding-left: 10px;
   width: 100%;
   z-index: 1000;
@@ -144,7 +144,7 @@ html {
 /* --- Navigation Tabs --- */
 
 #asset-tabs {
-  margin-top: 109px;
+  margin-top: 199px;
   margin-left: -15px;
 
 }
@@ -168,6 +168,77 @@ html {
 .nav-tabs > li {
   font-family: Kabel;
   font-size: 12px;
+}
+
+.ad-sense {
+  display: inline-block;
+  position: fixed;
+  margin-top: 0;
+  height: 91px;
+  width: 100%;
+  z-index: 1001;
+  background-color: lightgray;
+}
+
+/*.ad-sense-desktop-ins {
+  display: inline-block;
+  width: 728px;
+  height: 90px
+}*/
+
+.ad-sense-ins {
+  display: block;
+  height: 90px;
+}
+
+/*.ad-sense-mobile {
+  display: none;
+}*/
+
+@media (max-width: 768px) {
+  
+  .app-header {
+    margin-top: 90px;
+  }
+
+  #asset-tabs {
+    margin-top: 198px;
+  }
+
+  .ad-sense-ins {
+    display: block;
+    width: 100%;
+    height: 90px;
+  }
+
+  .ad-sense {
+    display: inline-block;
+    position: fixed;
+    margin-top: 0;
+    height: 90px;
+    width: 100%;
+    z-index: 1001;
+    background-color: lightgray;
+  }
+
+/*  .ad-sense-mobile {
+    display: inline-block;
+    position: fixed;
+    margin-left: 0;
+    margin-right: auto;
+    margin-top: 0px;
+    width: 100%;
+    height: 51px;
+    border-bottom: 1px dotted lightgray;
+    background-color: lightgray;
+    z-index: 1001;
+  }*/
+
+/*  .ad-sense-mobile-ins {
+    display: inline-block;
+    width: 320px;
+    height: 50px;
+  }*/
 }
 
 @media (max-width: 327px) {
