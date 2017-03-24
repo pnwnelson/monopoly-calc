@@ -16,9 +16,9 @@ class BillSubTotal extends React.Component {
 
 		return (
     	<div className="col-xs-6 cash-col-right text-left">
-    	<div className="cash-subtotal">
-    		= ${subTotalWithCommas}
-    	</div>
+        	<div className="cash-subtotal">
+        		= ${subTotalWithCommas}
+        	</div>
     	</div>
 		)
 	}
