@@ -186,6 +186,7 @@ class App extends React.Component {
               </Tab>
             </Tabs>
             </div>
+            <div className="github-link"><a href="https://github.com/pnwnelson/monopoly-calc/issues" target="bob_dole">Github Repo</a></div>
           </div>
         </div>
       </div>

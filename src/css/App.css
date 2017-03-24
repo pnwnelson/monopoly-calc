@@ -199,6 +199,10 @@ html {
   height: 90px;
 }
 
+.github-link {
+  padding: 10px;
+}
+
 /*.ad-sense-mobile {
   display: none;
 }*/
