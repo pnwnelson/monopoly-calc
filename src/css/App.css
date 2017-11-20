@@ -178,34 +178,27 @@ html {
   font-size: 12px;
 }
 
+.github-link {
+  padding: 10px;
+}
+
+/*Google Ad Units*/
+
 .ad-sense {
-  display: inline-block;
+  display: block;
   position: fixed;
   margin-top: 0;
-  height: 91px;
+  height: 90px;
   width: 100%;
   z-index: 1001;
   background-color: lightgray;
 }
 
-/*.ad-sense-desktop-ins {
-  display: inline-block;
-  width: 728px;
-  height: 90px
-}*/
-
 .ad-sense-ins {
   display: block;
-  height: 90px;
 }
 
-.github-link {
-  padding: 10px;
-}
-
-/*.ad-sense-mobile {
-  display: none;
-}*/
+/* Mobile Views */
 
 @media (max-width: 768px) {
   
@@ -218,7 +211,7 @@ html {
   }
 
   .ad-sense-ins {
-    display: block;
+    display: inline-block;
     width: 100%;
     height: 90px;
   }
@@ -232,25 +225,6 @@ html {
     z-index: 1001;
     background-color: lightgray;
   }
-
-/*  .ad-sense-mobile {
-    display: inline-block;
-    position: fixed;
-    margin-left: 0;
-    margin-right: auto;
-    margin-top: 0px;
-    width: 100%;
-    height: 51px;
-    border-bottom: 1px dotted lightgray;
-    background-color: lightgray;
-    z-index: 1001;
-  }*/
-
-/*  .ad-sense-mobile-ins {
-    display: inline-block;
-    width: 320px;
-    height: 50px;
-  }*/
 }
 
 @media (max-width: 327px) {
