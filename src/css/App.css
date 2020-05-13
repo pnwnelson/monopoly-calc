@@ -15,8 +15,20 @@
 
 @import './kabelfont.css';
 
+iframe {
+  position: relative;
+}
+
 html {
   font-family: Kabel;
+}
+
+.container-page-width {
+  width: 728px;
+}
+
+.main-section {
+  margin-top: 75px;
 }
 
 .row-centered {
@@ -46,18 +58,19 @@ html {
 }
 
 .app-header {
-  position: fixed;
-  margin-top: 90px;
-  padding-left: 10px;
+  /* position: fixed; */
+  /* margin-top: 90px; */
+  /* padding-left: 10px; */
   width: 100%;
   z-index: 1000;
   background-color: white;
+  width: 728px;
 
 }
 
 .logo-wrapper {
   margin-left: 5px;
-  width: 150px;
+  /* width: 150px; */
 }
 
 .title-logo {
@@ -71,14 +84,14 @@ html {
 
 
 .networth-total-box {
-  position: absolute;
+  /* position: absolute;
   right: 0;
-  top: 19px;
+  top: 19px; */
   height: 55px;
   width: 150px;
   background-color: #d6f1d6; 
-  border-bottom-left-radius: 10px;
-  border-top-left-radius: 10px;
+  /* border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px; */
 }
 
 .content-wrapper {
@@ -88,9 +101,8 @@ html {
 
 .total-header {
   text-align: center;
-  margin: 2px;
+  margin: 5px;
   color: gray;
-  font-weight: lighter;
   font-size: 10px;
 }
 
@@ -104,7 +116,7 @@ html {
 
 .sub-header {
   color: gray;
-  font-weight: lighter;
+  /* font-weight: lighter; */
   text-align: center;
 }
 
@@ -152,25 +164,29 @@ html {
 /* --- Navigation Tabs --- */
 
 #asset-tabs {
-  margin-top: 199px;
-  margin-left: -15px;
+  /* margin-top: 199px;
+  margin-left: -15px; */
 
 }
 
 .tab-content {
   margin-top: 10px;
-  margin-left: 10px;
+  /* margin-left: 10px; */
 }
 
 .nav-tabs {
-  position: fixed;
+  /* position: fixed; */
   z-index: 1000;
   background-color: white;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .nav {
-  padding-left: 25px !important;
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 728px;
+  /* padding-left: 25px !important; */
 }
 
 .nav-tabs > li {
@@ -184,12 +200,24 @@ html {
 
 /*Google Ad Units*/
 
+.ad-sense-container {
+  top: 124px;
+  height: 100px;
+  width: 728px;
+}
+
+.ad-sense-container-2 {
+  top: 124px;
+  height: 100px;
+  width: 728px;
+}
+
 .ad-sense {
   display: block;
-  position: fixed;
-  margin-top: 0;
+  /* position: fixed; */
+  margin-top: 10px;
   height: 90px;
-  width: 100%;
+  width: 728px;
   z-index: 1001;
   background-color: lightgray;
 }
@@ -198,16 +226,38 @@ html {
   display: block;
 }
 
+.ad-sense-desktop-ins {
+  display: block;
+}
+
 /* Mobile Views */
 
 @media (max-width: 768px) {
-  
+  .main-section {
+    margin-top: 120px;
+  }
   .app-header {
+    width: 100%;
+  }
+  .container-page-width {
+    width: 100%;
+  }
+  /* .app-header {
     margin-top: 90px;
+  } */
+
+  /* #asset-tabs {
+    margin-top: 198px;
+  } */
+  .nav {
+    width: 100%;
+    /* padding-left: 25px !important; */
+    top: 118px;
   }
 
-  #asset-tabs {
-    margin-top: 198px;
+  .ad-sense-container {
+    width: 100%;
+    top: 155px;
   }
 
   .ad-sense-ins {
@@ -218,8 +268,8 @@ html {
 
   .ad-sense {
     display: inline-block;
-    position: fixed;
-    margin-top: 0;
+    /* position: fixed; */
+    /* margin-top: 0; */
     height: 90px;
     width: 100%;
     z-index: 1001;

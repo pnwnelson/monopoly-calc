@@ -9,14 +9,16 @@
     "bootstrap": "^3.3.7",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
-    "react-dom": "^15.4.2"
+    "react-dom": "^15.4.2",
+    "react-ga": "^2.7.0",
+    "tachyons": "^4.12.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
-    "deploy": "surge -p build -d monopoly-calc.com",
+    "deploy": "surge -p build -d https://monopoly-calc.com",
     "yolo": "npm run build && npm run deploy"
   }
 }

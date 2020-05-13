@@ -26,21 +26,14 @@ export default React.createClass({
 		const { bill } = this.props;
 
 		return (
-			<div className="container-fluid">
-				<div className="row">
-					<div className="col-sm-6">
-						<div className="row">
-							<div className="col-xs-6 cash-col-left text-right">
-								<CashItem
-									key={bill.id}
-									bill={bill}
-									onChange={this.changeBillSubTotal}
-								/>
-							</div>
-							<BillSubTotal billSubTotal={this.state.billSubTotal} />
-						</div>
-					</div>
-					<div className="col-xs-6" />
+			<div className="flex flex-column w-100">
+				<div className="flex flex-row items-center justify-center">
+					<CashItem
+						key={bill.id}
+						bill={bill}
+						onChange={this.changeBillSubTotal}
+					/>
+					<BillSubTotal billSubTotal={this.state.billSubTotal} />
 				</div>
 			</div>
 		);
