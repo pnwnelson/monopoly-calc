@@ -237,7 +237,7 @@ class App extends React.Component {
                   <h4 className="kabel-font-sub">CALCULATOR</h4>                  
                 </div>
               </div>
-              <h4 className="w-50-l dn db-l sub-header">
+              <h4 className="w-50-l dn db-l sub-header f3-l">
                 Figure out the net worth of the game winner!
               </h4>
               <NetWorthTotal
@@ -254,6 +254,7 @@ class App extends React.Component {
                 <div className="w-100 relative">
                   <Tabs defaultActiveKey={1} id="asset-tabs" className="center relative">
                     <div className="db dn-ns fixed items-center justify-center ad-sense-container bg-white z-999">
+                    <div className="tc pt3 f7 gray">Ads help support this site! Thanks for your support!</div>
                       <AdSenseResponsive
                         client="ca-pub-6063578944512286"
                         slot="8034558454"
@@ -261,6 +262,7 @@ class App extends React.Component {
                       />          
                     </div>
                     <div className="dn db-ns fixed items-center justify-center ad-sense-container bg-white z-999">
+                    <div className="tc pt3 f7 gray">Ads help support this site! Thanks for your support!</div>
                       <AdSenseDesktop
                         client="ca-pub-6063578944512286"
                         slot="9906828034"
@@ -271,6 +273,12 @@ class App extends React.Component {
                         <ul className="list-unstyled properties-item">
                           {propertyNode}
                         </ul>
+                      </div>
+                      <div className="dn db-ns items-center justify-center ad-sense-container-2 bg-white z-999">
+                        <AdSenseDesktop
+                          client="ca-pub-6063578944512286"
+                          slot="6243695446"
+                        />          
                       </div>
                       <div className="flex flex-row justify-center subproperty-item-list-container">
                         <ul className="list-unstyled properties-item">

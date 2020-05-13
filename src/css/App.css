@@ -15,12 +15,16 @@
 
 @import './kabelfont.css';
 
+iframe {
+  position: relative;
+}
+
 html {
   font-family: Kabel;
 }
 
 .container-page-width {
-  width: 1000px;
+  width: 728px;
 }
 
 .main-section {
@@ -60,7 +64,7 @@ html {
   width: 100%;
   z-index: 1000;
   background-color: white;
-  width: 1000px;
+  width: 728px;
 
 }
 
@@ -181,7 +185,7 @@ html {
   display: flex;
   justify-content: center;
   position: fixed;
-  width: 1000px;
+  width: 728px;
   /* padding-left: 25px !important; */
 }
 
@@ -199,7 +203,13 @@ html {
 .ad-sense-container {
   top: 124px;
   height: 100px;
-  width: 1000px;
+  width: 728px;
+}
+
+.ad-sense-container-2 {
+  top: 124px;
+  height: 100px;
+  width: 728px;
 }
 
 .ad-sense {
@@ -207,7 +217,7 @@ html {
   /* position: fixed; */
   margin-top: 10px;
   height: 90px;
-  width: 1000px;
+  width: 728px;
   z-index: 1001;
   background-color: lightgray;
 }
