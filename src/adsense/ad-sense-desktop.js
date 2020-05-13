@@ -18,16 +18,16 @@ class AdSenseDesktop extends React.Component {
 
 	render () {
 
-		// const style = {
-		// 	width: '728px',
-		// 	height: '90px'
-		// }
+		const style = {
+			width: '728px',
+			height: '90px'
+		}
 
 		return (
-			<div className="ad-sense-desktop">
+			<div className="ad-sense">
 				<div className='ad'>
 					<ins className='adsbygoogle ad-sense-desktop-ins' 
-						// style={style}
+						style={style}
 						data-ad-client={this.props.client}
 						data-ad-slot={this.props.slot} />
 				</div>

@@ -65,9 +65,11 @@ class NetWorthTotal extends React.Component {
     const totalWithCommas = numberWithCommas(total);
 
     return (
-      <div className="networth-total-box">
-        <h6 className="total-header">YOUR NET WORTH</h6>
-        <div className="total-number">${totalWithCommas}</div>
+      <div className="w-50 w-25-l">
+        <div className="fr flex flex-column items-center networth-total-box br3 br3-ns br--left ">
+          <h6 className="total-header">YOUR NET WORTH</h6>
+          <div className="total-number">${totalWithCommas}</div>          
+        </div>
       </div>
     );
   }
@@ -225,67 +227,83 @@ class App extends React.Component {
     });
 
     return (
-      <div>
-        <div className="app-header">
-          <div className="logo-wrapper text-center">
-            <h3 className="kabel-font-main title-logo">MONOPOLY</h3>
-            <h4 className="kabel-font-sub">CALCULATOR</h4>
-          </div>
-          <NetWorthTotal
-            billFinalTotal={this.state.billFinalTotal}
-            propertyFinalTotal={this.state.propertyFinalTotal}
-            subPropertyFinalTotal={this.state.subPropertyFinalTotal}
-          />
-          <h6 className="sub-header">
-            Figure out the net worth of the game winner
-          </h6>
-        </div>
-
-        <AdSenseResponsive
-          client="ca-pub-6063578944512286"
-          slot="8034558454"
-          format="auto"
-        />
-        <div>
-          <div className="row-fluid content-wrapper">
-            <div className="col-xs-12">
-              <Tabs defaultActiveKey={1} id="asset-tabs">
-                <Tab eventKey={1} title="Property Assets">
-                  <div className="row property-item-list-container">
-                    <ul className="list-unstyled properties-item">
-                      {propertyNode}
-                    </ul>
-                  </div>
-                  <div className="row subproperty-item-list-container">
-                    <ul className="list-unstyled properties-item">
-                      {subPropertyNode}
-                    </ul>
-                  </div>
-                </Tab>
-                <Tab eventKey={2} title="Cash Assets">
-                  <div className="row property-item-list-container">
-                    <ul className="list-unstyled properties-item">
-                      {billsNode}
-                    </ul>
-                  </div>
-                  <div className="row cash-total-box">
-                    <div className="col-sm-6 text-center">
-                      <CashAssetsTotal
-                        billFinalTotal={this.state.billFinalTotal}
-                      />
+      <div className="relative">
+        <div className="flex flex-column container-page-width center">
+          <div className="flex flex-column items-center">
+            <div className="fixed flex flex-wrap items-center justify-between app-header">
+              <div className="w-50 w-25-l pl3 pl0-l">
+                <div className="fl flex flex-column items-center">
+                  <h3 className="kabel-font-main title-logo">MONOPOLY</h3>
+                  <h4 className="kabel-font-sub">CALCULATOR</h4>                  
+                </div>
+              </div>
+              <h4 className="w-50-l dn db-l sub-header">
+                Figure out the net worth of the game winner!
+              </h4>
+              <NetWorthTotal
+                billFinalTotal={this.state.billFinalTotal}
+                propertyFinalTotal={this.state.propertyFinalTotal}
+                subPropertyFinalTotal={this.state.subPropertyFinalTotal}
+              />
+              <h4 className="db-m dn-ns sub-header f4 center">
+                Figure out the net worth of the game winner!
+              </h4>
+            </div>
+            <div className="flex flex-column w-100 main-section">
+              <div className="flex flex-row">
+                <div className="w-100 relative">
+                  <Tabs defaultActiveKey={1} id="asset-tabs" className="center relative">
+                    <div className="db dn-ns fixed items-center justify-center ad-sense-container bg-white z-999">
+                      <AdSenseResponsive
+                        client="ca-pub-6063578944512286"
+                        slot="8034558454"
+                        format="auto"
+                      />          
                     </div>
-                  </div>
-                </Tab>
-              </Tabs>
+                    <div className="dn db-ns fixed items-center justify-center ad-sense-container bg-white z-999">
+                      <AdSenseDesktop
+                        client="ca-pub-6063578944512286"
+                        slot="9906828034"
+                      />          
+                    </div>
+                    <Tab eventKey={1} title="Property Assets">
+                      <div className="flex flex-row justify-center property-item-list-container">
+                        <ul className="list-unstyled properties-item">
+                          {propertyNode}
+                        </ul>
+                      </div>
+                      <div className="flex flex-row justify-center subproperty-item-list-container">
+                        <ul className="list-unstyled properties-item">
+                          {subPropertyNode}
+                        </ul>
+                      </div>
+                    </Tab>
+                    <Tab eventKey={2} title="Cash Assets" className="flex center">
+                      <div className="flex flex-row items-center justify-center cash-asset-container">
+                        <ul className="w-100 pl0">
+                          {billsNode}
+                        </ul>
+                      </div>
+                      <div className="flex flex-row justify-center cash-total-box">
+                        <div className="text-center">
+                          <CashAssetsTotal
+                            billFinalTotal={this.state.billFinalTotal}
+                          />
+                        </div>
+                      </div>
+                    </Tab>
+                  </Tabs>
+                </div>
+              </div>
             </div>
-            <div className="github-link">
-              <a
-                href="https://github.com/pnwnelson/monopoly-calc/issues"
-                target="bob_dole"
-              >
-                Github Repo
-              </a>
-            </div>
+          </div>
+          <div className="github-link">
+            <a
+              href="https://github.com/pnwnelson/monopoly-calc/issues"
+              target="bob_dole"
+            >
+              Github Repo
+            </a>
           </div>
         </div>
       </div>
